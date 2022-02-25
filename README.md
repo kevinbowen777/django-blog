@@ -1,15 +1,16 @@
 ## django_blog - A mini blog
 
-django_blog is a demonstration of Django functionality. 
+django_blog is a demonstration of basic Django functionality. 
 
 
 ---
 ## Features
- - Add users
+ - User registration
  - Create, edit, and delete posts
+ - Admin management of users and posts
 
 ### Live Demo on Heroku: 
- - TBD
+ - [django_blog](https://rocky-fortress-40743.herokuapp.com/)
 ### Docker Container Image:
 
  - TBD
