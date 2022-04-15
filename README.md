@@ -1,6 +1,6 @@
 ## django_blog - A mini blog
 
-django_blog is a demonstration of basic Django functionality. 
+django_blog is a demonstration of basic Django functionality.
 
 ### Installation
  - `git clone https://github.com/kevinbowen777/django_blog.git`
@@ -16,7 +16,7 @@ django_blog is a demonstration of basic Django functionality.
  - Create, edit, and delete posts
  - Admin management of users and posts
 
-### Live Demo on Heroku: 
+### Live Demo on Heroku:
  - [django_blog](https://rocky-fortress-40743.herokuapp.com/)
 ### Docker Container Image:
 
@@ -28,7 +28,7 @@ django_blog is a demonstration of basic Django functionality.
 ---
 [![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/kevinbowen777/django_blog/blob/master/LICENSE)
 ---
-### Reporting Bugs                                                              
-                                                                                 
+### Reporting Bugs
+
    Visit the [Issues page](https://github.com/kevinbowen777/django_blog/issues)
       to view currently open bug reports or open a new issue.
