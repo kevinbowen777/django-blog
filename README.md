@@ -2,6 +2,13 @@
 
 django_blog is a demonstration of basic Django functionality. 
 
+### Installation
+ - `git clone https://github.com/kevinbowen777/django_blog.git`
+ - `cd django_blog`
+ - `pipenv install`
+ - `pipenv shell`
+ - `python manage.py runserver`
+ - Open browser to http://127.0.0.1:8000
 
 ---
 ## Features
