@@ -1,8 +1,10 @@
 {% load static %}
+<!DOCTYPE html>
 <html>
   <head>
     <title>Django Blog</title>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400" rel="stylesheet">
+    <!-- CSS -->
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
   </head>
   <body>
@@ -25,5 +27,7 @@
       {% block content %}
       {% endblock content %}
     </div>
+    <!-- JavaScript -->
+    <script src="{% static 'js/base.js' %></script>
   </body>
 </html>
