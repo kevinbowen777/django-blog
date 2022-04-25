@@ -8,6 +8,7 @@ django = "~=3.2.12"
 whitenoise = "==5.1.0"
 gunicorn = "==19.9.0"
 environs = {extras = ["django"], version = "*"}
+django-crispy-forms = "*"
 
 [dev-packages]
 pre-commit = "~=2.18.1"
