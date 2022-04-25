@@ -136,8 +136,16 @@ STATICFILES_FINDERS = [
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+# django-allauth config
+SITE_ID = 1
 LOGIN_REDIRECT_URL = "home"
-LOGOUT_REDIRECT_URL = "home"
+ACCOUNT_LOGOUT_REDIRECT_URL = "home"
+AUTHENTICATION_BACKENDS = (
+    "django.contrib.auth.backends.ModelBackend",
+    "django.contrib.auth_backends.AuthenticationBackend",
+)
+ACCOUNT_EMAIL_VERIFICATION = "none"
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 # django-crispy-forms
 CRISPY_TEMPLATE_PACK = "bootstrap4"
@@ -149,13 +157,3 @@ CRISPY_TEMPLATE_PACK = "bootstrap4"
 # INTERNAL_IPS = [ip[:-1] + "1" for ip in ips]
 # The following is for use locally:
 INTERNAL_IPS = ["127.0.0.1"]
-
-# django-allauth config
-SITE_ID = 1
-AUTHENTICATION_BACKENDS = (
-    "django.contrib.auth.backends.ModelBackend",
-    "django.contrib.auth_backends.AuthenticationBackend",
-)
-
-ACCOUNT_EMAIL_VERIFICATION = "none"
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
