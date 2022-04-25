@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     "whitenoise.runserver_nostatic",
     "django.contrib.staticfiles",
     # Third-party applications
+    "crispy_forms",
     "debug_toolbar",
     # Local applications
     "djangoblog",
@@ -132,6 +133,9 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
+
+# django-crispy-forms
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 # django-debug-toolbar
 # import socket
