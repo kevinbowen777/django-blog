@@ -22,8 +22,10 @@ django_blog is a demonstration of basic Django functionality.
 
  - TBD
 ---
+## Screenshots
 
-
+### Home
+![Home](https://github.com/kevinbowen777/bookstore/blob/master/images/django_blog_homepage.png)
 
 ---
 [![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/kevinbowen777/django_blog/blob/master/LICENSE)
