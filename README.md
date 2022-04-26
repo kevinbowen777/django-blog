@@ -7,7 +7,7 @@ django_blog is a demonstration of basic Django functionality.
  - `cd django_blog`
  - `pipenv install`
  - `pipenv shell`
- - `python manage.py runserver`
+ - `pipenv run python manage.py runserver`
  - Open browser to http://127.0.0.1:8000
 
 ---
