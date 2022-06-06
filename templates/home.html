@@ -2,11 +2,24 @@
 {% load static %}
 
 {% block content %}
+<div class="container">
+  <p>
   <img class="pagepic" src="{% static 'images/charles_mingus.jpg' %}">
   {% for post in object_list %}
-    <div class="post-entry">
-        <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
-      <p>{{ post.body }}</p>
+  <p>
+    <div class="post">
+      <div class="post-header">
+          <span class="font-weight-bold">{{ post.title }}</span> &middot;
+          <span class="text-muted">by {{ post.author }} | {{ post.date }}</span>
+      </div>
+      <div class="post-body">
+        {{ post.body }}
+      </div>
+      <div class="post-footer">
+      </div>
     </div>
   {% endfor %}
+  </p>
+  </p>
+</div>
 {% endblock content %}
