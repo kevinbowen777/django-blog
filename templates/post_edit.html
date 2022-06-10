@@ -3,10 +3,14 @@
 
 {% block title %}Edit Post{% endblock title %}
 {% block content %}
-    <h1>Edit post</h1>
-    <form action="" method="post">
+<div class="container">
+  <p>
+    <h2>Edit post</h2>
+    <form class="col-md-6" action="" method="post">
       {% csrf_token %}
       {{ form|crispy }}
     <input class="btn btn-success" type="submit" value="Update">
-</form>
+    </form>
+  </p>
+</div>
 {% endblock content %}
