@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     # Third-party applications
     "crispy_forms",
     "debug_toolbar",
+    "django_extensions",
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
