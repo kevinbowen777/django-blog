@@ -339,7 +339,7 @@ sqlparse = ">=0.2.0"
 name = "django-extensions"
 version = "3.1.5"
 description = "Extensions for Django"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -1269,7 +1269,7 @@ brotli = ["brotli"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "c2ef93bb71adf52843ddd097093802f6511951d14ba643b6643382dad29768da"
+content-hash = "79823fadfa9316feeb0a35fcd9ab9aaaa9b1d680d448af09707803538e56d149"
 
 [metadata.files]
 appdirs = [
