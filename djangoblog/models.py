@@ -11,6 +11,9 @@ class Post(models.Model):
     )
     body = models.TextField()
 
+    class Meta:
+        ordering = ["-date"]
+
     def __str__(self):
         return self.title
 
