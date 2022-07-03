@@ -1,3 +1,4 @@
+from django.contrib.auth import get_user_model
 from django.db import models
 from django.urls import reverse
 
@@ -6,7 +7,7 @@ class Post(models.Model):
     title = models.CharField(max_length=200)
     date = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(
-        "auth.User",
+        get_user_model(),
         on_delete=models.CASCADE,
     )
     body = models.TextField()
