@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     # Third-party applications
     "crispy_forms",
     # "debug_toolbar",
+    "django_countries",
     "django_extensions",
     "allauth",
     "allauth.account",
@@ -107,6 +108,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+AUTH_USER_MODEL = "accounts.CustomUser"
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = "/static/"
@@ -139,8 +141,8 @@ ACCOUNT_AUTHENICATION_METHOD = "email"
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 
-# EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+# EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 ACCOUNT_EMAIL_VERIFICATION = "optional"
 DEFAULT_FROM_EMAIL = "kevin.bowen@gmail.com"
 EMAIL_HOST = "smtp.sendgrid.net"
