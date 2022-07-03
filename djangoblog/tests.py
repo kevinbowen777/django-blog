@@ -44,7 +44,7 @@ class BlogTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(no_response.status_code, 404)
         self.assertContains(response, "A good title")
-        self.assertTemplateUsed(response, "post_detail.html")
+        self.assertTemplateUsed(response, "posts/post_detail.html")
 
     """
     Note: need to understand objects.last better
