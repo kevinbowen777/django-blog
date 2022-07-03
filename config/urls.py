@@ -4,9 +4,12 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
+    # Django admin
     path("admin/", admin.site.urls),
-    # path("accounts/", include("django.contrib.auth.urls")),
+    # User management
     path("accounts/", include("allauth.urls")),
+    # Local apps
+    path("accounts/", include("accounts.urls")),
     path("", include("djangoblog.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
