@@ -9,6 +9,8 @@ class BlogListView(ListView):
     model = Post
     template_name = "home.html"
 
+    paginate_by = 3
+
 
 class BlogDetailView(DetailView):
     model = Post
