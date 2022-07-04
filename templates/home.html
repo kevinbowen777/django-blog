@@ -4,6 +4,11 @@
 {% block content %}
 <div class="container">
   <p>
+  {% if user.is_authenticated %}
+    <p>Hi {{ user.username }}!</p>
+  {% else %}
+    <p>You are not logged in</p>
+  {% endif %}
   <img class="pagepic" src="{% static 'images/charles_mingus.jpg' %}">
   {% for post in object_list %}
   <p>
