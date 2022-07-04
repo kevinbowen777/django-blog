@@ -12,6 +12,7 @@
       {% csrf_token %}
       {{ form|crispy }}
       <button class="btn btn-danger" type="submit">Log Out</button>
+      <a class="btn btn-info" href="javascript:window.history.back()">Cancel</a>
     </form>
   </p>
 </div>
