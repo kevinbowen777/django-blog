@@ -9,7 +9,7 @@
   <p>
     <div class="post">
       <div class="post-header">
-          <span class="font-weight-bold">{{ post.title }}</span> &middot;
+          <a class="font-weight-bold" href="{% url 'post_detail' post.pk %}">{{ post.title }}</a> &middot;
           <span class="text-muted">by {{ post.author }} | {{ post.date }}</span>
       </div>
       <div class="post-body">
