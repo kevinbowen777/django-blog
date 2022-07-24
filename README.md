@@ -17,7 +17,7 @@ django_blog is a demonstration of basic Django functionality.
  - Admin management of users and posts
 
 ### Live Demo on Heroku:
- - [django_blog](https://rocky-fortress-40743.herokuapp.com/)
+ - [django_blog](https://kbowen-django-blog.herokuapp.com/)
 ### Docker Container Image:
 
  - TBD
