@@ -20,7 +20,7 @@ django_blog is a demonstration of basic Django functionality.
  - [django_blog](https://kbowen-django-blog.herokuapp.com/)
 ### Docker Container Image:
 
- - TBD
+ - N/A
 ---
 ## Screenshots
 
