@@ -1,4 +1,4 @@
-"""Views for django-start user accounts."""
+"""Views for kbowen-django-blog user accounts."""
 from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse
