@@ -1,5 +1,5 @@
 from django.urls import reverse_lazy
-from django.views.generic import DetailView, ListView, TemplateView
+from django.views.generic import DetailView, ListView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
 from .models import Post
@@ -7,7 +7,7 @@ from .models import Post
 
 class BlogListView(ListView):
     model = Post
-    template_name = "home.html"
+    template_name = "posts/post_list.html"
 
     paginate_by = 3
 
@@ -34,7 +34,3 @@ class BlogDeleteView(DeleteView):
     model = Post
     template_name = "posts/post_delete.html"
     success_url = reverse_lazy("home")
-
-
-class AboutPageView(TemplateView):
-    template_name = "about.html"

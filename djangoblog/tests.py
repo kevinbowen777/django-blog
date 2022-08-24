@@ -1,9 +1,8 @@
 from django.contrib.auth import get_user_model
 from django.test import TestCase
-from django.urls import resolve, reverse
+from django.urls import reverse
 
 from .models import Post
-from .views import AboutPageView
 
 
 class BlogTests(TestCase):
@@ -32,10 +31,10 @@ class BlogTests(TestCase):
         self.assertEqual(f"{self.post.body}", "Nice body content")
 
     def test_post_list_view(self):
-        response = self.client.get(reverse("home"))
+        response = self.client.get(reverse("post_list"))
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "Nice body content")
-        self.assertTemplateUsed(response, "home.html")
+        self.assertTemplateUsed(response, "posts/post_list.html")
 
     def test_post_detail_view(self):
         response = self.client.get("/post/1/")
@@ -76,25 +75,3 @@ class BlogTests(TestCase):
     def test_post_delete_view(self):
         response = self.client.post(reverse("post_delete", args="1"))
         self.assertEqual(response.status_code, 302)
-
-
-class AboutPageTests(TestCase):
-    def setUp(self):
-        url = reverse("about")
-        self.response = self.client.get(url)
-
-    def test_aboutpage_status_code(self):
-        self.assertEqual(self.response.status_code, 200)
-
-    def test_aboutpage_template(self):
-        self.assertTemplateUsed(self.response, "about.html")
-
-    def test_aboutpage_contains_correct_html(self):
-        self.assertContains(self.response, "About Page")
-
-    def test_aboutpage_does_not_contain_incorrect_html(self):
-        self.assertNotContains(self.response, "This doesn't belong here")
-
-    def test_aboutpage_url_resolves_aboutpageview(self):
-        view = resolve("/about/")
-        self.assertEqual(view.func.__name__, AboutPageView.as_view().__name__)
