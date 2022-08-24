@@ -1,5 +1,5 @@
 [run]
-include = accounts/*, config/*, djangoblog/*
+include = accounts/*, config/*, djangoblog/*, pages/*
 omit =
     */__init__.py,
     *manage.py,

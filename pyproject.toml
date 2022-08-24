@@ -18,7 +18,7 @@ exclude = '''
 '''
 
 [tool.coverage.paths]
-source = ["accounts", "config", "djangoblog"]
+source = ["accounts", "config", "djangoblog", "pages"]
 
 [tool.coverage.run]
 branch = true
