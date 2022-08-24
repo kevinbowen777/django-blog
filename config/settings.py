@@ -36,8 +36,9 @@ INSTALLED_APPS = [
     "allauth.socialaccount",
     "allauth.socialaccount.providers.github",
     # Local applications
-    "djangoblog",
-    "accounts",
+    "accounts.apps.AccountsConfig",
+    "djangoblog.apps.DjangoblogConfig",
+    "pages.apps.PagesConfig",
 ]
 
 MIDDLEWARE = [
