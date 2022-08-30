@@ -1,5 +1,13 @@
 ## django_blog - A mini blog
 
+<div align="center">
+
+  [![Status](https://img.shields.io/badge/status-active-success.svg)]() 
+  [![GitHub Issues](https://img.shields.io/github/issues/kevinbowen777/django_blog.svg)](https://github.com/kevinbowen777/django_blog/issues)
+  [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+
+</div>
+
 django_blog is a demonstration of basic Django functionality.
 
 ### Installation
@@ -34,8 +42,6 @@ django_blog is a demonstration of basic Django functionality.
 ### Home
 ![Home](https://github.com/kevinbowen777/django_blog/blob/master/images/django_blog_homepage.png)
 
----
-[![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/kevinbowen777/django_blog/blob/master/LICENSE)
 ---
 ### Reporting Bugs
 
