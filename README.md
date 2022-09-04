@@ -1,4 +1,4 @@
-## django_blog - A mini blog
+## django_blog
 
 <div align="center">
 
@@ -9,6 +9,19 @@
 </div>
 
 django_blog is a demonstration of basic Django functionality.
+
+---
+
+## Features
+
+ - Create, edit, and delete posts
+ - Admin management of users and posts
+ - User registration with email verification & social(GitHub) login
+ - Bootstrap4 & crispy-forms decorations
+ - Customizable user profiles with bio, profile picture & country flags
+ - Nox testing sessions (black, linting, pytest, coverage, Sphinx doc generation)
+
+---
 
 ### Installation
  - `git clone https://github.com/kevinbowen777/django_blog.git`
@@ -26,16 +39,10 @@ django_blog is a demonstration of basic Django functionality.
  - Browse to http://127.0.0.1:8000 or http://127.0.0.1:8000/admin/
 
 ---
-## Features
- - User registration
- - Create, edit, and delete posts
- - Admin management of users and posts
 
 ### Live Demo on Heroku:
  - [django_blog](https://kbowen-django-blog.herokuapp.com/)
-### Docker Container Image:
 
- - N/A
 ---
 ## Screenshots
 
