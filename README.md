@@ -8,18 +8,35 @@
 
 </div>
 
-django_blog is a demonstration of basic Django functionality.
+django_blog is a web blog application built with Django 4.1
 
 ---
 
 ## Features
 
- - Create, edit, and delete posts
- - Admin management of users and posts
- - User registration with email verification & social(GitHub) login
- - Bootstrap4 & crispy-forms decorations
- - Customizable user profiles with bio, profile picture & country flags
- - Nox testing sessions (black, linting, pytest, coverage, Sphinx doc generation)
+ - Application
+     - Create, edit, and delete posts
+     - User registration with email verification & social(GitHub) login
+     - Bootstrap4 & crispy-forms decorations
+     - Customizable user profile pages with bio, profile pic, & country flags
+     - image carousel
+     - pagination template
+ - Dev/testing
+     - basic module testing templates
+     - Coverage reports
+     - Debug-toolbar available
+     - Examples of using Factories & pytest fixtures in account app testing
+     - `shell_plus` with IPython via `django-extensions` package
+     - Nox testing sessions for latest Python 3.9, 3.10, and 3.11
+         - black
+         - Sphinx documentaion generations
+         - linting
+             - flake8
+             - flake8-bugbear
+             - flake8-docstrings
+             - flake8-import-order
+         - safety(python package vulnerability testing)
+         - pytest sessions with coverage
 
 ---
 
