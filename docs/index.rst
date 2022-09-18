@@ -7,6 +7,11 @@ django_blog
 
    license
 
+.. contents:: Table of Contents
+   :local:
+   :backlinks: top
+   :depth: 2
+
 django_blog is a web blog application built with Django 4.1
 
 Features
@@ -22,7 +27,7 @@ Features
    * pagination template
  * Dev/testing
 
-   * basic module testing templates
+   * Basic module testing templates
    * Coverage reports
    * Debug-toolbar available
    * Examples of using Factories & pytest fixtures in account app testing
@@ -30,7 +35,7 @@ Features
    * Nox testing sessions for latest Python 3.9, 3.10, and 3.11
 
      * black
-     * Sphinx documentaion generations
+     * Sphinx documentaion generation
      * linting
        
        * flake8
@@ -38,7 +43,7 @@ Features
        * flake8-docstrings
        * flake8-import-order
        * safety(python package vulnerability testing)
-       * pytest sessions with coverage
+     * pytest sessions with coverage
 
 
 Installation
@@ -52,8 +57,8 @@ run this command in your terminal:
    $ git clone https://github.com/kevinbowen777/django_blog.git
    $ cd django_blog
 
-Local install:
---------------
+Local installation
+------------------
 
 .. code-block:: console
 
@@ -63,8 +68,8 @@ Local install:
    $ python manage.py createsuperuser
    
 
-Docker install:
----------------
+Docker installation
+-------------------
 
 .. code-block:: console
 
@@ -97,8 +102,10 @@ Testing
    $ nox -rs lint-3.11
    $ nox -s tests
 
-Live Application Demonstration on Heroku
-----------------------------------------
+Application Demo
+----------------
+Live demonstration of application running on Heroku:
+
 `kbowen-django_blog <https://kbowen-django-blog.herokuapp.com/>`_
 
 Reporting Bugs

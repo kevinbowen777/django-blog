@@ -10,6 +10,14 @@
 
 django_blog is a web blog application built with Django 4.1
 
+##### Table of Contents
+ - [Features](#features)
+ - [Installation](#installation)
+ - [Testing](#testing)
+ - [Application Demo](#application-demo)
+ - [Screenshots](#screenshots)
+ - [Reporting Bugs](#reporting-bugs)
+
 ---
 
 ## Features
@@ -29,14 +37,14 @@ django_blog is a web blog application built with Django 4.1
      - `shell_plus` with IPython via `django-extensions` package
      - Nox testing sessions for latest Python 3.9, 3.10, and 3.11
          - black
-         - Sphinx documentaion generations
+         - Sphinx documentaion generation
          - linting
              - flake8
              - flake8-bugbear
              - flake8-docstrings
              - flake8-import-order
          - safety(python package vulnerability testing)
-         - pytest sessions with coverage
+     - pytest sessions with coverage
 
 ---
 
@@ -57,16 +65,28 @@ django_blog is a web blog application built with Django 4.1
 
 ---
 
-### Live Demo on Heroku:
+### Testing
+ - `docker-compose exec web python manage.py test`
+ - `coverage run -m pytest`
+ - Nox (includes sessions for black, lint, safety, tests)
+     - testing supported for Python 3.9, 3.10, 3.11
+     - e.g. `nox`, `nox -rs lint-3.11`, `nox -s tests`
+
+---
+
+### Application Demo
+A live application demonstration hosted at Heroku
  - [django_blog](https://kbowen-django-blog.herokuapp.com/)
 
 ---
-## Screenshots
+
+### Screenshots
 
 ### Home
 ![Home](https://github.com/kevinbowen777/django_blog/blob/master/images/django_blog_homepage.png)
 
 ---
+
 ### Reporting Bugs
 
    Visit the [Issues page](https://github.com/kevinbowen777/django_blog/issues)
