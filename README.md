@@ -27,10 +27,8 @@ django_blog is a web blog application built with Django 4.1
      - User registration with email verification & social(GitHub) login
      - Bootstrap4 & crispy-forms decorations
      - Customizable user profile pages with bio, profile pic, & country flags
-     - image carousel
-     - pagination template
  - Dev/testing
-     - basic module testing templates
+     - Basic module testing templates
      - Coverage reports
      - Debug-toolbar available
      - Examples of using Factories & pytest fixtures in account app testing
@@ -44,7 +42,7 @@ django_blog is a web blog application built with Django 4.1
              - flake8-docstrings
              - flake8-import-order
          - safety(python package vulnerability testing)
-     - pytest sessions with coverage
+         - pytest sessions with coverage
 
 ---
 

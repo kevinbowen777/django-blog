@@ -23,8 +23,6 @@ Features
    * User registration with email verification & social(GitHub) login
    * Bootstrap4 & crispy-forms decorations
    * Customizable user profile pages with bio, profile pic, & country flags
-   * image carousel
-   * pagination template
  * Dev/testing
 
    * Basic module testing templates
@@ -42,7 +40,7 @@ Features
        * flake8-bugbear
        * flake8-docstrings
        * flake8-import-order
-       * safety(python package vulnerability testing)
+     * safety(python package vulnerability testing)
      * pytest sessions with coverage
 
 
