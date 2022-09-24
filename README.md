@@ -1,14 +1,14 @@
-## django_blog
+## django-blog
 
 <div align="center">
 
   [![Status](https://img.shields.io/badge/status-active-success.svg)]() 
-  [![GitHub Issues](https://img.shields.io/github/issues/kevinbowen777/django_blog.svg)](https://github.com/kevinbowen777/django_blog/issues)
+  [![GitHub Issues](https://img.shields.io/github/issues/kevinbowen777/django-blog.svg)](https://github.com/kevinbowen777/django-blog/issues)
   [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
 </div>
 
-django_blog is a web blog application built with Django 4.1
+django-blog is a web blog application built with Django 4.1
 
 ##### Table of Contents
  - [Features](#features)
@@ -47,7 +47,7 @@ django_blog is a web blog application built with Django 4.1
 ---
 
 ### Installation
- - `git clone https://github.com/kevinbowen777/django_blog.git`
+ - `git clone https://github.com/kevinbowen777/django-blog.git`
  - `cd django_start`
  - Local installation:
      - `poetry shell`
@@ -74,18 +74,18 @@ django_blog is a web blog application built with Django 4.1
 
 ### Application Demo
 A live application demonstration hosted at Heroku
- - [django_blog](https://kbowen-django-blog.herokuapp.com/)
+ - [django-blog](https://kbowen-django-blog.herokuapp.com/)
 
 ---
 
 ### Screenshots
 
 ### Home
-![Home](https://github.com/kevinbowen777/django_blog/blob/master/images/django_blog_homepage.png)
+![Home](https://github.com/kevinbowen777/django-blog/blob/master/images/django-blog_homepage.png)
 
 ---
 
 ### Reporting Bugs
 
-   Visit the [Issues page](https://github.com/kevinbowen777/django_blog/issues)
+   Visit the [Issues page](https://github.com/kevinbowen777/django-blog/issues)
       to view currently open bug reports or open a new issue.
