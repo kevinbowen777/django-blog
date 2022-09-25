@@ -1,4 +1,4 @@
-django_blog 
+django-blog 
 ===========
 
 .. toctree::
@@ -12,7 +12,7 @@ django_blog
    :backlinks: top
    :depth: 2
 
-django_blog is a web blog application built with Django 4.1
+django-blog is a web blog application built with Django 4.1
 
 Features
 --------
@@ -109,4 +109,4 @@ Live demonstration of application running on Heroku:
 Reporting Bugs
 --------------
 
-Visit the django_blog `Issues page <https://github.com/kevinbowen777/django_blog/issues>`_ on GitHub.
+Visit the django_blog `Issues page <https://github.com/kevinbowen777/django-blog/issues>`_ on GitHub.
