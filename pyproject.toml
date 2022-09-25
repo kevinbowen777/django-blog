@@ -56,7 +56,7 @@ extend_skip = ["*.md", "*.json"]
 line_length = 79
 
 [tool.poetry]
-name = "django_blog"
+name = "django-blog"
 version = "0.1.0"
 description = "A simple blog built with Django"
 authors = ["Kevin Bowen <kevin.bowen@gmail.com>"]
