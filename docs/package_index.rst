@@ -1,6 +1,14 @@
 Package Index
 =============
 
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+
+   license
+   create_new_users
+   create_new_posts
+
 .. contents:: Table of Contents
    :local:
    :backlinks: top
