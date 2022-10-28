@@ -1,7 +1,7 @@
 """Views for kbowen-django-blog user accounts."""
 from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.message.views import SuccessMessageMixin
+from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse
 from django.views.generic import (
     DetailView,
@@ -24,6 +24,8 @@ class UserDetailView(LoginRequiredMixin, DetailView):
 
 
 class UserUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+    """Edit user profiles."""
+
     fields = [
         "name",
         "age",
@@ -49,9 +51,12 @@ class UserUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
 
 
 class UserRedirectView(LoginRequiredMixin, RedirectView):
+    """Navigate to users profile page."""
+
     permanent = False
 
     def get_redirect_url(self):
+        """Return user's profile page."""
         return reverse(
             "user_detail",
             kwargs={"username": self.request.user.username},
