@@ -11,7 +11,9 @@ per-file-ignores =
     accounts/tests/*:S101,S106
     accounts/tests.py:S101,S106
     books/tests/*:S101,S106
-    config/tests/*:S101
+    config/tests/*:S101,S106
     config/tests.py:S101,S106
     djangoblog/tests.py:S101,S106
-    pages/tests/*:S101
+    djangoblog/tests/*:S101,S106
+    pages/tests/*:S101,S106
+    pages/tests.py:S101, S106
