@@ -14,8 +14,10 @@ ENV DEBUG="${DEBUG}" \
 ENV PATH="/root/.local/bin:$PATH"
 
 FROM python-base as builder-base
-RUN apt-get update \
-  && apt-get install -y --no-install-recommends build-essential curl libpq-dev \
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    curl \
+    libpq-dev \
   && rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man \
   && apt-get clean
 

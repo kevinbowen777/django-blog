@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     "allauth.socialaccount.providers.github",
     # Local applications
     "accounts.apps.AccountsConfig",
-    "djangoblog.apps.DjangoblogConfig",
+    "posts.apps.PostsConfig",
     "pages.apps.PagesConfig",
 ]
 
