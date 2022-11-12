@@ -7,8 +7,8 @@ nox.options.sessions = "lint", "safety", "tests"
 locations = (
     "accounts",
     "config",
-    "djangoblog",
     "pages",
+    "posts",
     "./noxfile.py",
     "docs/conf.py",
 )
@@ -94,7 +94,7 @@ def safety(session):
         )
 
 
-@nox.session(python=["3.11", "3.10", "3.9"])
+@nox.session(python=["3.11", "3.10"])
 def tests(session):
     """Run the test suite."""
     args = session.posargs or ["--cov"]

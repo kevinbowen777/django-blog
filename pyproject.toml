@@ -12,13 +12,13 @@ exclude = '''
   | build
   | dist
   | accounts/migrations
-  | djangoblog/migrations
+  | posts/migrations
   | ^.*\b(migrations)\b.*$
 )/
 '''
 
 [tool.coverage.paths]
-source = ["accounts", "config", "djangoblog", "pages"]
+source = ["accounts", "config", "pages", "posts"]
 
 [tool.coverage.run]
 branch = true

@@ -13,7 +13,7 @@ per-file-ignores =
     books/tests/*:S101,S106
     config/tests/*:S101,S106
     config/tests.py:S101,S106
-    djangoblog/tests.py:S101,S106
-    djangoblog/tests/*:S101,S106
+    posts/tests.py:S101,S106
+    posts/tests/*:S101,S106
     pages/tests/*:S101,S106
     pages/tests.py:S101, S106
