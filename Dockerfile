@@ -11,6 +11,7 @@ ENV DEBUG="${DEBUG}" \
   PIP_DISABLE_PIP_VERSION_CHECK=on \
   PIP_DEFAULT_TIMEOUT=100
 
+# location of poetry installation
 ENV PATH="/root/.local/bin:$PATH"
 
 FROM python-base as builder-base
@@ -23,12 +24,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 COPY poetry.lock pyproject.toml /code/
 
-# Set working directory
 WORKDIR /code
 
 RUN curl -sSL https://install.python-poetry.org | python3 - \
     && poetry config virtualenvs.create false \
     && poetry install --no-interaction --no-ansi
 
-# Copy project
 COPY . /code/
