@@ -42,6 +42,7 @@ Features
        * flake8
        * flake8-bugbear
        * flake8-docstrings
+       * flake8-import-order
      * safety(python package vulnerability testing)
      * pytest sessions with coverage
 

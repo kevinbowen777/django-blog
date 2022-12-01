@@ -40,6 +40,7 @@ django-blog is a web blog application built with Django 4.1
              - flake8
              - flake8-bugbear
              - flake8-docstrings
+             - flake8-import-order
          - safety(python package vulnerability testing)(`nox -s safety`)
          - pytest sessions with coverage (`coverage run -m pytest`)
      - For additional links to package resources used in this repository, see the [Package Index](docs/package_index.md)
