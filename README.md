@@ -100,7 +100,7 @@ A live application demonstration hosted at ~~Heroku~~:
 ### Screenshots
 
 ### Home
-![Home](https://github.com/kevinbowen777/django-blog/blob/master/images/django-blog_homepage.png)
+![Home](images/django-blog_homepage.png)
 
 ---
 
