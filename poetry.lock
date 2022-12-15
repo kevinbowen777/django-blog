@@ -295,7 +295,7 @@ python-versions = "*"
 
 [[package]]
 name = "dj-database-url"
-version = "1.1.0"
+version = "1.2.0"
 description = "Use Database URLs in your Django Application."
 category = "main"
 optional = false
@@ -1017,7 +1017,7 @@ pip = "*"
 
 [[package]]
 name = "pip-audit"
-version = "2.4.8"
+version = "2.4.9"
 description = "A tool for scanning Python environments for known vulnerabilities"
 category = "dev"
 optional = false
@@ -1027,9 +1027,9 @@ python-versions = ">=3.7"
 CacheControl = {version = ">=0.12.10", extras = ["filecache"]}
 cyclonedx-python-lib = ">=2.0.0,<2.5.0 || >2.5.0"
 html5lib = ">=1.1"
-packaging = ">=21.0.0,<22.0.0"
+packaging = ">=21.0.0"
 pip-api = ">=0.0.28"
-pip-requirements-parser = ">=31.2.0"
+pip-requirements-parser = ">=32.0.0"
 resolvelib = ">=0.8.0"
 rich = ">=12.4"
 toml = ">=0.10"
@@ -1998,8 +1998,8 @@ distlib = [
     {file = "distlib-0.3.6.tar.gz", hash = "sha256:14bad2d9b04d3a36127ac97f30b12a19268f211063d8f8ee4f47108896e11b46"},
 ]
 dj-database-url = [
-    {file = "dj-database-url-1.1.0.tar.gz", hash = "sha256:8be4253439d75412aaad4f82af7aecda956893c87fb8d10edc0adb2d34312527"},
-    {file = "dj_database_url-1.1.0-py3-none-any.whl", hash = "sha256:5f2f6b3f65786bac5d3b9e749bff1dcac83398d95778576909697f7b16aee6b9"},
+    {file = "dj-database-url-1.2.0.tar.gz", hash = "sha256:b23b15046cb38180e0c95207bcc90fe5e9dbde8eef16065907dd85cf4ca7036c"},
+    {file = "dj_database_url-1.2.0-py3-none-any.whl", hash = "sha256:5c2993b91801c0f78a8b19e642b497b90831124cbade0c265900d4c1037b4730"},
 ]
 dj-email-url = [
     {file = "dj-email-url-1.0.6.tar.gz", hash = "sha256:55ffe3329e48f54f8a75aa36ece08f365e09d61f8a209773ef09a1d4760e699a"},
@@ -2377,8 +2377,8 @@ pip-api = [
     {file = "pip_api-0.0.30-py3-none-any.whl", hash = "sha256:2a0314bd31522eb9ffe8a99668b0d07fee34ebc537931e7b6483001dbedcbdc9"},
 ]
 pip-audit = [
-    {file = "pip_audit-2.4.8-py3-none-any.whl", hash = "sha256:40876d6ad6adf5ac64fba1ecef034db9804c35c2c18f7c22cb7b11b382c10df9"},
-    {file = "pip_audit-2.4.8.tar.gz", hash = "sha256:a45540ab0c5a9311315ca42c78fa8f72cf3598d5968a67d883d2d6194eda598c"},
+    {file = "pip_audit-2.4.9-py3-none-any.whl", hash = "sha256:a53096325813cf67cda7729ee0d1b1fa1442a09b874adf668f24b76f027320e3"},
+    {file = "pip_audit-2.4.9.tar.gz", hash = "sha256:aac7f1eabb723a18be9be4dbfe1b15ee4c3e48d09bf4bc2440ba7e0555dd4285"},
 ]
 pip-check = [
     {file = "pip-check-2.8.1.tar.gz", hash = "sha256:76d6abd49b1cd4b2db8752da685c2fae2eae39349efc2adeccf49cb148264d3b"},
