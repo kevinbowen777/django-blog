@@ -72,7 +72,7 @@ django-blog is a web blog application built with Django 4.1
          (loads Django shell autoloading project models & classes)
        - `docker run -it django-start-web bash`
          (CLI access to container)
- - Browse to http://127.0.0.1:8000 or http://127.0.0.1:8000/admin/
+ - Browse to http://127.0.0.1:8000 or http://127.0.0.1:8000/resources/
 
 ---
 
