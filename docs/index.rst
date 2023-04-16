@@ -15,7 +15,7 @@ django-blog
    :backlinks: top
    :depth: 2
 
-django-blog is a web blog application built with Django 4.1
+django-blog is a web blog application built with Django 4.2.x
 
 Features
 --------
