@@ -114,6 +114,15 @@ A live application demonstration hosted at ~~Heroku~~:
 ### Home
 ![Home](images/django-blog_homepage.png)
 
+### Blog Index
+![Blog Index](images/django-blog_index.png)
+
+### Sign In Page
+![Sign In Page](images/django-blog_signin.png)
+
+### Profile Page
+![Profile Page](images/django-blog_profilepage.png)
+
 ---
 
 ### Reporting Bugs
