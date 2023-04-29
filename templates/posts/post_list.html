@@ -10,6 +10,7 @@
     <p>You are not logged in</p>
   {% endif %}
   <img class="pagepic" src="{% static 'images/charles_mingus.jpg' %}">
+  <ul>
   {% for post in object_list %}
   <p>
     <div class="post">
@@ -24,6 +25,7 @@
       </div>
     </div>
   {% endfor %}
+  </ul>
   </p>
   </p>
 </div>

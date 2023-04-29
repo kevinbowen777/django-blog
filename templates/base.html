@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,23 +76,28 @@
       {% endif %}
       {% block content %}
       {% endblock content %}
-      {% block pagination %}
-        {% if is_paginated %}
-          <div class="pagination">
-            <span class="page-links">
-              {% if page_obj.has_previous %}
-                <a class="btn btn-info" href="{{ request.path }}?page={{ page_obj.previous_page_number }}">&laquo; previous</a>
-              {% endif %}
-              <span class="page-current">
-                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
-              </span>
-              {% if page_obj.has_next %}
-              <a class="btn btn-info" href="{{ request.path }}?page={{ page_obj.next_page_number }}">next &raquo;</a>
-              {% endif %}
-            </span>
-          </div>
+      <!-- Pagination -->
+        {% if page_obj.has_other_pages %}
+        <ul class="pagination">
+            {% if page_obj.has_previous %}
+            <li><a class="btn btn-info btn-sm mr-1" href="?page={{ page_obj.previous_page_number }}">&laquo; Previous</a></li>
+            {% else %}
+            <li class="btn btn-info btn-sm disabled mr-1"><span>&laquo; Previous</span></li>
+            {% endif %}
+            {% for i in page_obj.paginator.page_range %}
+            {% if page_obj.number == i %}
+                <li class="btn btn-info btn-sm active mr-1"><span> {{ i }} <span class="sr-only">(current)</span></span></li>
+            {% else %}
+                <li><a class="btn btn-info btn-sm mr-1" href="?page={{ i }}">{{ i }}</a></li>
+            {% endif %}
+            {% endfor %}
+            {% if page_obj.has_next %}
+            <li><a class="btn btn-info btn-sm" href="?page={{ page_obj.next_page_number }}">Next &raquo;</a></li>
+            {% else %}
+            <li class="btn btn-info btn-sm disabled"><span>Next &raquo;</span></li>
+            {% endif %}
+        </ul>
         {% endif %}
-      {% endblock pagination %}
     </div>
     <!-- Bootstrap4 JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
