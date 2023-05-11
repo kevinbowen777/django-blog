@@ -49,6 +49,31 @@ description = "A simple blog built with Django"
 authors = ["Kevin Bowen <kevin.bowen@gmail.com>"]
 license = "MIT"
 
+readme = "README.md"
+
+homepage = ""
+repository = "https://github.com/kevinbowen777/django-blog.git"
+documentation = ""
+
+keywords = ["django", "web-application", "news"]
+
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Environment :: Web Environment",
+    "Framework :: Django",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Internet :: WWW/HTTP",
+]
+
 [tool.poetry.dependencies]
 python = "^3.10"
 Django = "4.2.1"
