@@ -44,7 +44,7 @@ show_missing = true
 
 [tool.poetry]
 name = "django-blog"
-version = "0.1.0"
+version = "0.2.0"
 description = "A simple blog built with Django"
 authors = ["Kevin Bowen <kevin.bowen@gmail.com>"]
 license = "MIT"
