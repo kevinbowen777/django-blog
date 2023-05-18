@@ -55,12 +55,13 @@ homepage = ""
 repository = "https://github.com/kevinbowen777/django-blog.git"
 documentation = ""
 
-keywords = ["django", "web-application", "news"]
+keywords = ["django", "web-application", "blog"]
 
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
     "Environment :: Web Environment",
     "Framework :: Django",
+    "Framework :: Django :: 4.2",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
@@ -77,9 +78,10 @@ classifiers = [
 [tool.poetry.dependencies]
 python = "^3.10"
 Django = "4.2.1"
+
 django-crispy-forms = "^2.0"
 django-extensions = "^3.1.5"
-environs = {extras = ["django"], version = "^9.5.0"}
+environs = { version = "^9.5.0", extras = ["django"] }
 django-allauth = "^0.54.0"
 whitenoise = "^6.1.0"
 psycopg2-binary = "2.9.6"
@@ -92,7 +94,7 @@ crispy-bootstrap4 = "^2022.1"
 django-debug-toolbar = "^4.0.0"
 pre-commit = "^3.0.0"
 black = "^23.0.0"
-coverage = {extras = ["toml"], version = "^7.0.0"}
+coverage = { version = "^7.0.0", extras = ["toml"] }
 pytest = "^7.1.2"
 pytest-cov = "^4.0.0"
 pytest-django = "^4.5.2"
@@ -108,7 +110,8 @@ factory-boy = "^3.2.0"
 django-coverage-plugin = "^3.0.0"
 pip-check = "^2.7"
 pip-audit = "^2.5.0"
-Sphinx = "^7.0.0"
+Sphinx = "6.2.1"
+sphinx-rtd-theme = "^1.2.0"
 ruff = "^0.0.267"
 
 [tool.pytest.ini_options]
