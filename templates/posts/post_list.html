@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load static %}
 
 {% block content %}
@@ -15,11 +15,11 @@
   <p>
     <div class="post">
       <div class="post-header">
-          <a class="font-weight-bold" href="{% url 'post_detail' post.pk %}">{{ post.title }}</a> &middot;
-          <span class="text-muted">by {{ post.author }} | {{ post.date }}</span>
+          <a class="font-weight-bold" href="{{ post.get_absolute_url }}">{{ post.title }}</a> &middot;
+          <span class="text-muted">by {{ post.author }} | {{ post.publish }}</span>
       </div>
       <div class="post-body">
-        {{ post.body|linebreaksbr }}
+        {{ post.body|truncatewords:30|linebreaks }}
       </div>
       <div class="post-footer">
       </div>
