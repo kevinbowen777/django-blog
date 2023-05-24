@@ -4,21 +4,21 @@ from django.urls import reverse  # noqa:F401
 
 from ..models import Post
 
-# from ..models import Post, Comment
-
 
 class PostTests(TestCase):
-    def setUp(self):
-        self.user = get_user_model().objects.create_user(
+    @classmethod
+    def setUpTestData(cls):
+        cls.user = get_user_model().objects.create_user(
             username="leopoldbloom",
             email="leopoldbloom@example.com",
-            password="@5eCr3tP@5sw0rD",
+            password="secret",
         )
 
-        self.post = Post.objects.create(
+        cls.post = Post.objects.create(
             title="A good title",
             body="Nice body content",
-            author=self.user,
+            slug="a-good-title",
+            author=cls.user,
         )
 
     def test___str__(self):
@@ -27,6 +27,7 @@ class PostTests(TestCase):
 
     def test_post_content(self):
         self.assertEqual(f"{self.post.title}", "A good title")
+        self.assertEqual(f"{self.post.slug}", "a-good-title")
         self.assertEqual(f"{self.post.author}", "leopoldbloom")
         self.assertEqual(f"{self.post.body}", "Nice body content")
 
