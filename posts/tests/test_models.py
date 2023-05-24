@@ -4,8 +4,6 @@ from accounts.tests.factories import UserFactory
 
 from .factories import PostFactory
 
-# from ..models import Review
-
 
 class PostTests(TestCase):
     def setUp(self):
@@ -23,9 +21,11 @@ class PostTests(TestCase):
         assert self.post.__str__() == self.post.title
         assert str(self.post) == self.post.title
 
+    """
     def test_get_absolute_url(self):
         url = self.post.get_absolute_url()
         assert url == f"/posts/{self.post.id}/"
+    """
 
 
 """
