@@ -1,30 +1,18 @@
-{% extends 'base.html' %}
-{% load static %}
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock title %}
 
 {% block content %}
-<div class="container">
-  <p>
-  {% if user.is_authenticated %}
-    <p>Hi {{ user.username }}!</p>
-  {% else %}
-    <p>You are not logged in</p>
-  {% endif %}
-  <img class="pagepic" src="{% static 'images/charles_mingus.jpg' %}">
-  {% for post in object_list %}
-  <p>
-    <div class="post">
-      <div class="post-header">
-          <a class="font-weight-bold" href="{% url 'post_detail' post.pk %}">{{ post.title }}</a> &middot;
-          <span class="text-muted">by {{ post.author }} | {{ post.date }}</span>
-      </div>
-      <div class="post-body">
-        {{ post.body|linebreaksbr }}
-      </div>
-      <div class="post-footer">
-      </div>
+    <div class="jumbotron">
+      <h2 class="display-4">Django Blog app</h2>
+      <p class="lead">A blog website built with Django.</p>
+      {% if user.is_authenticated %}
+        <a class="btn btn-primary btn-lg" href="{% url 'post_list' %}"
+        role="button">View All Posts &raquo;</a>
+      {% else %}
+        <a class="btn btn-primary btn-lg" href="{% url 'account_signup' %}"
+        role="button">Register &raquo;</a>
+      {% endif %}
+      </p>
     </div>
-  {% endfor %}
-  </p>
-  </p>
-</div>
 {% endblock content %}

@@ -140,7 +140,7 @@ MEDIA_ROOT = BASE_DIR / "media"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # django-allauth config
-LOGIN_REDIRECT_URL = "home"
+LOGIN_REDIRECT_URL = "post_list"
 ACCOUNT_LOGOUT_REDIRECT_URL = "home"
 SITE_ID = 1
 AUTHENTICATION_BACKENDS = (
