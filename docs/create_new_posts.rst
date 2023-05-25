@@ -63,7 +63,7 @@ Sample post list
         author = User.objects.get(username="david"),
         title = "Django is exceedingly scalable",
         slug = "django-is-exceedingly-scalable",
-        body = "Some of the busiest sites on the web leverage Django\u2019s ability to quickly and flexibly scale."
+        body = "Some of the busiest sites on the web leverage Django\u2019s ability to quickly and flexibly scale.",
         status = "PB",
     )
     Post.objects.create(
@@ -111,7 +111,21 @@ Sample post list
     Post.objects.create(
         author = User.objects.get(username="kbowen"),
         title = "Positivity",
-        slug = "positivity",
+        slug = "positivity2",
         body = "Actively telling yourself that you are smart, funny, interesting, talented, a good communicator, a good friend, unique, knowledgeable, a quick study, an introspective thinker, or whatever other aspect you want to be, will eventually result in you persuading yourself that this is true.",
+        status = "PB",
+    )
+    Post.objects.create(
+        author = User.objects.get(username="susan"),
+        title  = "Who was Django Reinhardt?"
+        slug   = "who-was-django-reinhardt",
+        body   = "Jean Reinhardt (23 January 1910 – 16 May 1953), known by his Romani nickname Django (French: [dʒãŋɡo ʁɛjnaʁt] or [dʒɑ̃ɡo ʁenɑʁt]), was a Romani-Belgian jazz guitarist and composer. He was one of the first major jazz talents to emerge in Europe and has been hailed as one of its most significant exponents.\r\n\nWith violinist Stéphane Grappelli,[2] Reinhardt formed the Paris-based Quintette du Hot Club de France in 1934. The group was among the first to play jazz that featured the guitar as a lead instrument.[5] Reinhardt recorded in France with many visiting American musicians, including Coleman Hawkins and Benny Carter, and briefly toured the United States with Duke Ellington's orchestra in 1946. He died suddenly of a stroke in 1953 at the age of 43.",
+        status = "PB",
+    )
+    Post.objects.create(
+        author = User.objects.get(username="david"),
+        title  = "Who was Charlie Christian?",
+        slug   = "who-was-charlie-christian",
+        body   = "Charles Henry Christian (July 29, 1916 – March 2, 1942) was an American swing and jazz guitarist. He was among the first electric guitarists and was a key figure in the development of bebop and cool jazz. He gained national exposure as a member of the Benny Goodman Sextet and Orchestra from August 1939 to June 1941. His single-string technique, combined with amplification, helped bring the guitar out of the rhythm section and into the forefront as a solo instrument. For this, he is often credited with leading to the development of the lead guitar role in musical ensembles and bands.",
         status = "PB",
     )
