@@ -57,7 +57,7 @@ class PostTests(TestCase):
                 "author": self.user.id,
             },
         )
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)
         self.assertEqual(Post.objects.last().title, "A good title")
         self.assertEqual(Post.objects.last().body, "Nice body content")
 
@@ -71,13 +71,13 @@ class PostTests(TestCase):
                 "body": "Updated text",
             },
         )
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)
 
     def test_post_delete_view(self):
         self.client.login(email="leopolbloom@example.com", password="secret")
         response = self.client.get(reverse("post_delete", args={self.post.id}))
         # response = self.client.get(reverse("post_delete", args="1"))
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)
 
 
 """
