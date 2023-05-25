@@ -5,9 +5,9 @@
 <div class="container">
   <p>
   {% if user.is_authenticated %}
-    <p>Hi {{ user.username }}!</p>
+    <p class="text-muted">Hi {{ user.username }}!</p>
   {% else %}
-    <p>You are not logged in</p>
+    <p class="text-muted">You are not currently logged in.</p>
   {% endif %}
   <img class="pagepic" src="{% static 'images/charles_mingus.jpg' %}">
   <ul>
