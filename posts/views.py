@@ -1,8 +1,11 @@
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.core.mail import send_mail
+from django.shortcuts import get_object_or_404, render
 from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
+from .forms import EmailPostForm
 from .models import Post
 
 
@@ -47,3 +50,26 @@ class BlogDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     def test_func(self):
         obj = self.get_object()
         return obj.author == self.request.user
+
+
+def post_share(request, post_id):
+    post = get_object_or_404(Post, id=post_id, status=Post.Status.PUBLISHED)
+    sent = False
+
+    if request.method == "POST":
+        form = EmailPostForm(request.POST)
+        if form.is_valid():
+            cd = form.cleaned_data
+            post_url = request.build_absolute_uri(post.get_absolute_url())
+            subject = f"{cd['name']} recommends you read " f"{post.title}"
+            message = (
+                f"Read {post.title} at {post_url}\n\n"
+                f"{cd['name']}'s comments: {cd['comments']}"
+            )
+            send_mail(subject, message, "kevin.bowen@gmail.com", [cd["to"]])
+            sent = True
+    else:
+        form = EmailPostForm()
+    return render(
+        request, "posts/post_share.html", {"post": post, "form": form, "sent": sent}
+    )

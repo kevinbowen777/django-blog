@@ -8,9 +8,17 @@
           <span class="text-muted">by {{ post.author }} | {{ post.publish }}</span>
     <p>{{ post.body|linebreaks }}</p>
   </div>
+    <p>
+        <a class="btn btn-success" href="{% url "post_share" post.id %}">
+            Share this post
+        </a>
+    </p>
 
-  <a class="btn btn-info" href="{% url 'post_edit' post.id %}">Edit Blog Post</a>
-  <a class="btn btn-danger" href="{% url 'post_delete' post.id %}">Delete Blog Post</a>
+    {% if request.user == post.author %}
+      <a class="btn btn-info mr-2" href="{% url 'post_edit' post.id %}">Edit Blog Post</a>
+      <a class="btn btn-danger" href="{% url 'post_delete' post.id %}">Delete Blog Post</a>
+    {% else %}
+    {% endif %}
   </p>
 </div>
 {% endblock content %}
