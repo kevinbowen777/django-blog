@@ -18,8 +18,8 @@ class BlogListView(ListView):
 
 class BlogDetailView(LoginRequiredMixin, DetailView):
     model = Post
-    template_name = "posts/post_detail.html"
     context_object_name = "post"
+    template_name = "posts/post_detail.html"
 
 
 class BlogCreateView(LoginRequiredMixin, CreateView):

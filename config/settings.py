@@ -1,3 +1,4 @@
+"""Settings for the django-blog project."""
 from pathlib import Path
 
 # import socket  # noqa: E402 # Comment out if not using debug_toolbar
@@ -27,16 +28,16 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.sites",
     # Third-party applications
-    "crispy_forms",
-    "crispy_bootstrap4",
-    # "debug_toolbar",
-    "django_countries",
-    "django_extensions",
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
     "allauth.socialaccount.providers.github",
-    # Local applications
+    "crispy_forms",
+    "crispy_bootstrap4",
+    "django_countries",
+    # "debug_toolbar",
+    "django_extensions",
+    # Local Applications
     "accounts.apps.AccountsConfig",
     "posts.apps.PostsConfig",
     "pages.apps.PagesConfig",
@@ -76,7 +77,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "config.wsgi.application"
 
-
 # Database
 # Note: Set sqlite/dev URI in .env file
 DATABASES = {
@@ -108,7 +108,6 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",  # noqa:E501,B950
     },
 ]
-
 
 # Internationalization
 LANGUAGE_CODE = "en-us"
@@ -148,13 +147,14 @@ AUTHENTICATION_BACKENDS = (
     "allauth.account.auth_backends.AuthenticationBackend",
 )
 ACCOUNT_USERNAME_REQUIRED = True
-ACCOUNT_AUTHENICATION_METHOD = "username_email"
+ACCOUNT_AUTHENTICATION_METHOD = "username_email"
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 3
 ACCOUNT_EMAIL_REQUIRED = False
 ACCOUNT_EMAIL_VERIFICATION = "optional"
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
 ACCOUNT_UNIQUE_EMAIL = True
 
+# third-party email relay configuration
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 # EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 DEFAULT_FROM_EMAIL = "kevin.bowen@gmail.com"
