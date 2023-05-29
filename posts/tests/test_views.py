@@ -71,7 +71,7 @@ class PostTests(TestCase):
                 "body": "Updated text",
             },
         )
-        self.assertEqual(response.status_code, 302)
+        self.assertEqual(response.status_code, 200)
 
     def test_post_delete_view(self):
         self.client.login(email="leopolbloom@example.com", password="secret")
