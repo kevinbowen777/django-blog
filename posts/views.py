@@ -77,7 +77,7 @@ def post_share(request, post_id):
 
 
 @require_POST
-def post_comment(request, post_id):
+def comment_add(request, post_id):
     post = get_object_or_404(Post, id=post_id, status=Post.Status.PUBLISHED)
     comment = None
     form = CommentForm(data=request.POST)
@@ -87,6 +87,6 @@ def post_comment(request, post_id):
         comment.save()
     return render(
         request,
-        "posts/post_comment.html",
+        "posts/comment_add.html",
         {"post": post, "form": form, "comment": comment},
     )
