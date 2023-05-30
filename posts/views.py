@@ -2,10 +2,11 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.core.mail import send_mail
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse_lazy
+from django.views.decorators.http import require_POST
 from django.views.generic import DetailView, ListView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
-from .forms import EmailPostForm
+from .forms import CommentForm, EmailPostForm
 from .models import Post
 
 
@@ -72,4 +73,20 @@ def post_share(request, post_id):
         form = EmailPostForm()
     return render(
         request, "posts/post_share.html", {"post": post, "form": form, "sent": sent}
+    )
+
+
+@require_POST
+def post_comment(request, post_id):
+    post = get_object_or_404(Post, id=post_id, status=Post.Status.PUBLISHED)
+    comment = None
+    form = CommentForm(data=request.POST)
+    if form.is_valid():
+        comment = form.save(commit=False)
+        comment.post = post
+        comment.save()
+    return render(
+        request,
+        "posts/post_comment.html",
+        {"post": post, "form": form, "comment": comment},
     )
