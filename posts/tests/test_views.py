@@ -2,7 +2,7 @@ from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import reverse  # noqa:F401
 
-from ..models import Post
+from ..models import Comment, Post
 
 
 class PostTests(TestCase):
@@ -80,7 +80,6 @@ class PostTests(TestCase):
         self.assertEqual(response.status_code, 302)
 
 
-"""
 class CommentTests(TestCase):
     def setUp(self):
         self.user = get_user_model().objects.create_user(
@@ -92,19 +91,64 @@ class CommentTests(TestCase):
         self.post = Post.objects.create(
             title="A good title",
             body="Nice body content",
+            slug="a-good-title",
             author=self.user,
         )
 
         self.comment = Comment.objects.create(
             post=self.post,
-            comment="A good comment",
-            author=self.user,
+            name="Ron Swoboda",
+            email="ron@amazingmets.org",
+            body="This is a comment",
         )
 
-    def test___str__(self):
-        assert self.comment.__str__() == self.comment.comment
-        assert str(self.comment) == self.comment.comment
+    def test_comment_content(self):
+        self.assertEqual(f"{self.comment.name}", "Ron Swoboda")
+        self.assertEqual(f"{self.comment.email}", "ron@amazingmets.org")
+        self.assertEqual(f"{self.comment.body}", "This is a comment")
 
+    """
+    def test_comment_add_view(self):
+        response = self.client.post(
+            reverse("comment_add", args={self.post.id}),
+            {
+                "name": "Ron Swoboda",
+                "email": "ron@amazingmets.org",
+                "body": "This is a new comment",
+            },
+        )
+        # self.assertEqual(response.status_code, 200)
+        self.assertEqual(Comment.objects.last().body, "This is a new comment")
+        self.assertTrue(self.comment.email == self.comment.email)
+
+    def test_comment_update(self):
+        # self.client.login(email="johndoe@example.com", password="secret")
+        response = self.client.post(
+            reverse("comment_edit", args={self.comment.id}),
+            {
+                "comment": "Updated comment",
+            },
+        )
+        self.assertEqual(response.status_code, 200)
+        # self.assertEqual(Comment.objects.first().comment, "Updated comment")
+
+    def test_comment_delete(self):
+        # self.client.login(email="johndoe@example.com", password="secret")
+        response = self.client.post(
+            reverse("comment_delete", args={self.comment.id}),
+        )
+        self.assertEqual(response.status_code, 302)
+        # self.assertNotContains(Message.objects.all().text, "Updated title")
+    """
+
+    def test___str__(self):
+        # assert self.comment.__str__() == self.comment.comment
+        assert str(self.comment) == f"Comment by {self.comment.name} on {self.post}"
+        # assert self.comment.__str__() == self.comment.comment
+        # assert str(self.comment) == self.comment.comment
+        # return f"Comment by {self.name} on {self.post}"
+
+    """
     def test_get_absolute_url(self):
-        self.assertEqual(self.comment.get_absolute_url(), "/posts/")
-"""
+        self.assertEqual(self.comment.get_absolute_url(), "/articles/")
+    """
