@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% block title %} {{ post.title }}{% endblock title %}
+
 {% block content %}
 <div class="container">
   <p>
@@ -12,13 +14,30 @@
         <a class="btn btn-success" href="{% url "post_share" post.id %}">
             Share this post
         </a>
-    </p>
-
     {% if request.user == post.author %}
-      <a class="btn btn-info mr-2" href="{% url 'post_edit' post.id %}">Edit Blog Post</a>
+      <a class="btn btn-info" href="{% url 'post_edit' post.id %}">Edit Blog Post</a>
       <a class="btn btn-danger" href="{% url 'post_delete' post.id %}">Delete Blog Post</a>
     {% else %}
     {% endif %}
+      {% with comments.count as total_comments %}
+        <h3>
+            {{ total_comments }} comment{{ total_comments|pluralize }}
+        </h3>
+      {% endwith %}
+      {% for comment in comments %}
+      <div class="comment">
+          <p class="info">
+            Comment {{ forloop.counter }} by {{ comment.name }}
+            {{ comment.created }}
+          </p>
+          {{ comment.body|linebreaks }}
+      </div>
+      {% empty %}
+        <p>There are no comments.</p>
+      {% endfor %}
+      {% include "posts/includes/comment_form.html" %}
+    </p>
+
   </p>
 </div>
 {% endblock content %}
