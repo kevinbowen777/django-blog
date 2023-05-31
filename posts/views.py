@@ -2,27 +2,40 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.core.mail import send_mail
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse_lazy
-from django.views.generic import DetailView, ListView
+from django.views.decorators.http import require_POST
+from django.views.generic import ListView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
-from .forms import EmailPostForm
+from .forms import CommentForm, EmailPostForm
 from .models import Post
 
 
-class BlogListView(ListView):
+class PostListView(ListView):
     queryset = Post.published.all()
     context_object_name = "posts"
     paginate_by = 3
     template_name = "posts/post_list.html"
 
 
-class BlogDetailView(LoginRequiredMixin, DetailView):
-    model = Post
-    context_object_name = "post"
-    template_name = "posts/post_detail.html"
+def post_detail(request, year, month, day, post):
+    post = get_object_or_404(
+        Post,
+        status=Post.Status.PUBLISHED,
+        slug=post,
+        publish__year=year,
+        publish__month=month,
+        publish__day=day,
+    )
+    comments = post.comments.filter(active=True)
+    form = CommentForm()
+    return render(
+        request,
+        "posts/post_detail.html",
+        {"post": post, "comments": comments, "form": form},
+    )
 
 
-class BlogCreateView(LoginRequiredMixin, CreateView):
+class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     template_name = "posts/post_new.html"
     fields = ["title", "author", "body"]
@@ -32,7 +45,7 @@ class BlogCreateView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class BlogUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
     template_name = "posts/post_edit.html"
     fields = ["title", "body"]
@@ -42,7 +55,7 @@ class BlogUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return obj.author == self.request.user
 
 
-class BlogDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Post
     template_name = "posts/post_delete.html"
     success_url = reverse_lazy("home")
@@ -72,4 +85,20 @@ def post_share(request, post_id):
         form = EmailPostForm()
     return render(
         request, "posts/post_share.html", {"post": post, "form": form, "sent": sent}
+    )
+
+
+@require_POST
+def comment_add(request, post_id):
+    post = get_object_or_404(Post, id=post_id, status=Post.Status.PUBLISHED)
+    comment = None
+    form = CommentForm(data=request.POST)
+    if form.is_valid():
+        comment = form.save(commit=False)
+        comment.post = post
+        comment.save()
+    return render(
+        request,
+        "posts/comment_add.html",
+        {"post": post, "form": form, "comment": comment},
     )

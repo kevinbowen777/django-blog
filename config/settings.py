@@ -1,4 +1,4 @@
-"""Settings for the django-blog project."""
+"""Settings for the news project."""
 from pathlib import Path
 
 # import socket  # noqa: E402 # Comment out if not using debug_toolbar
@@ -112,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "America/Vancouver"
+TIME_ZONE = "UTC"
 
 USE_I18N = True
 

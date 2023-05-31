@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block title %}Add a comment - {{ post.title }}{% endblock title %}
+
+{% block content %}
+<div class="container">
+  <p>
+  {% if comment %}
+    <h3>Your comment has been added.</h3>
+    <p><a class="btn btn-success" href="{{post.get_absolute_url }}">Back to the post</a></p>
+  {% else %}
+    {% include "posts/includes/comment_form.html" %}
+  {% endif %}
+  </p>
+</div>
+{% endblock content %}
