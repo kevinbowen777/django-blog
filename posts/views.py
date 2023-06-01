@@ -5,13 +5,18 @@ from django.shortcuts import get_object_or_404, render
 from django.urls import reverse_lazy
 from django.views.decorators.http import require_POST
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
+from taggit.models import Tag
 
 from .forms import CommentForm, EmailPostForm
 from .models import Post
 
 
-def post_list(request):
+def post_list(request, tag_slug=None):
     post_list = Post.published.all()
+    tag = None
+    if tag_slug:
+        tag = get_object_or_404(Tag, slug=tag_slug)
+        post_list = post_list.filter(tags__in=[tag])
     paginator = Paginator(post_list, 3)
     page_number = request.GET.get("page", 1)
     try:
@@ -20,7 +25,7 @@ def post_list(request):
         posts = paginator.page(1)
     except EmptyPage:
         posts = paginator.page(paginator.num_pages)
-    return render(request, "posts/post_list.html", {"posts": posts})
+    return render(request, "posts/post_list.html", {"posts": posts, "tag": tag})
 
 
 def post_detail(request, year, month, day, post):
@@ -44,7 +49,7 @@ def post_detail(request, year, month, day, post):
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     template_name = "posts/post_new.html"
-    fields = ["title", "author", "body"]
+    fields = ["title", "tags", "status", "body"]
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -54,7 +59,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
     template_name = "posts/post_edit.html"
-    fields = ["title", "body"]
+    fields = ["title", "tags", "status", "body"]
 
     def test_func(self):
         obj = self.get_object()
