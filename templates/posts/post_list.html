@@ -16,6 +16,7 @@
     <div class="post">
       <div class="post-header">
           <a class="font-weight-bold" href="{{ post.get_absolute_url }}">{{ post.title }}</a> &middot;
+          <p class="tags">Tags: {{ post.tags.all|join:", " }}</p>
           <span class="text-muted">by {{ post.author }} | {{ post.publish }}</span>
       </div>
       <div class="post-body">

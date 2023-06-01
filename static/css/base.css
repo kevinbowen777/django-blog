@@ -38,7 +38,7 @@ body {
 
 /* comments */
 .comment {
-  padding: 10px;
+  padding: 5px;
 }
 
 .comment:nth-child(even) {
@@ -55,4 +55,11 @@ body {
 .pagination {
     margin:40px 0;
     font-weight:bold;
+}
+
+p.tags {
+    color:#4b0082;
+    font-family: georgia, serif;
+    font-size: 12px;
+    font-style: italic;
 }
