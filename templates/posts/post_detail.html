@@ -31,15 +31,17 @@
 
     <div class="container">
         <h3>Similar Posts</h3>
+        <ul>
         {% for post in similar_posts %}
         <p>
-        <ul>
+        <li class="slim">
         <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
-        </ul>
+        </li>
         </p>
         {% empty %}
         There are no similar posts yet.
         {% endfor %}
+        </ul>
     </div>
       {% with comments.count as total_comments %}
         <h4>
