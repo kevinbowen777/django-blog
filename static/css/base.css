@@ -24,6 +24,34 @@ h3 {
     margin:30px 0 0;
 }
 
+ul.slim {
+  list-style-type: circle; /* Remove bullets */
+  /* padding: 0;  Remove padding */
+  margin: 0; /* Remove margins */
+  margin-bottom: 2rem;
+}
+
+li.slim {
+  margin: -10px;
+}
+
+#content {
+    float:left;
+    width:65%;
+    padding:0 0 0 30px;
+}
+
+#sidebar {
+    float:right;
+    font-size: 12px;
+    width:30%;
+    margin: 10px;
+    padding:10px;
+    background:#deb887;
+    border-radius: 5%;
+    height:100%;
+}
+
 .post-entry {
   margin-bottom: 2rem;
 }
@@ -40,7 +68,7 @@ h3 {
 
 .post-entry p {
   margin: 0;
-  font-weight; 400;
+  font-weight: 400;
 }
 
 .post-entry h2 a:hover {
@@ -63,7 +91,7 @@ h3 {
 }
 
 .comment:nth-child(even) {
-  background: #efefef;
+  background: #f0e68c;
 }
 
 .comment .info {
