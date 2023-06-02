@@ -43,6 +43,7 @@ li.slim {
 
 #sidebar {
     float:right;
+    font-size: 12px;
     width:30%;
     margin: 10px;
     padding:10px;
