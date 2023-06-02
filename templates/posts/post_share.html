@@ -17,7 +17,7 @@
     </p>
   {% else %}
     <h2>Share "{{ post.title }}" by email</h2>
-    <form class="col-md-6" method="post">
+    <form method="post">
       {% csrf_token %}
       {{ form|crispy }}
       <input class="btn btn-success" type="submit" value="Send email">
