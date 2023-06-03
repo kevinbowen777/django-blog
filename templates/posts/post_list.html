@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load posts_tags %}
 
 {% block content %}
 <div class="container">
@@ -33,7 +34,7 @@
           <span class="text-muted">by {{ post.author }} | {{ post.publish }}</span>
       </div>
       <div class="post-body">
-        {{ post.body|truncatewords:30|linebreaks }}
+        {{ post.body|markdown|truncatewords_html:30 }}
       </div>
       <div class="post-footer">
       </div>
@@ -44,4 +45,5 @@
   </p>
 </div>
   {% include "pagination.html" with page=posts %}
+<div class="clear"></div>
 {% endblock content %}

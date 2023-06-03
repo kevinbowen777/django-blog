@@ -9,7 +9,7 @@
   <p>
   {% if comment %}
     <h3>Your comment has been added.</h3>
-    <p><a class="btn btn-success" href="{{post.get_absolute_url }}">Back to the post</a></p>
+    <p><a class="btn btn-success mt-2" href="{{post.get_absolute_url }}">Back to the post</a></p>
   {% else %}
     {% include "posts/includes/comment_form.html" %}
   {% endif %}
