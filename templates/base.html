@@ -85,6 +85,14 @@
             This is a good blog.
             There have been {% total_posts %} posts written so far.
           </p>
+          <p>
+            <a href="{% url "post_feed" %}">
+                <img src="{% static 'images/rss-24.png' %}">
+            </a>
+            <a href="{% url "post_feed" %}">
+                Subscribe to django-blog RSS feed
+            </a>
+          </p>
           <h5>Latest posts</h5>
           {% show_latest_posts %}
           <h5>Most commented posts</h5>
