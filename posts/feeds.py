@@ -12,7 +12,7 @@ class LatestPostsFeed(Feed):
     description = "Recent posts of django-blog."
 
     def items(self):
-        return Post.published.all()[:5]
+        return Post.published.all()[:7]
 
     def item_title(self, item):
         return item.title
