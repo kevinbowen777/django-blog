@@ -4,10 +4,10 @@ from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 from django.urls import include, path
 
-from posts.sitemaps import PostSiteMap
+from posts.sitemaps import PostSitemap
 
 sitemaps = {
-    "posts": PostSiteMap,
+    "posts": PostSitemap,
 }
 
 urlpatterns = [
