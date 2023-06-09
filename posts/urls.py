@@ -8,6 +8,7 @@ from .views import (
     comment_add,
     post_detail,
     post_list,
+    post_search,
     post_share,
 )
 
@@ -25,4 +26,5 @@ urlpatterns = [
     path("posts/<int:post_id>/share/", post_share, name="post_share"),
     path("posts/<int:post_id>/comment/", comment_add, name="comment_add"),
     path("feed/", LatestPostsFeed(), name="post_feed"),
+    path("search/", post_search, name="post_search"),
 ]
