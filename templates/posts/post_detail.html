@@ -58,11 +58,14 @@
           {{ comment.body|markdown }}
       </div>
       {% empty %}
-        <p>There are no comments.</p>
+        <ul>
+        <p class="text-muted"><em>No comments have been posted yet.</em></p>
+        </ul>
       {% endfor %}
       {% include "posts/includes/comment_form.html" %}
     </p>
 
   </p>
 </div>
+<div class="clear"></div>
 {% endblock content %}

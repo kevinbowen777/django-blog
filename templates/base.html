@@ -84,7 +84,7 @@
         {% block content %}
         {% endblock content %}
       </div>
-      <div id="sidebar">
+      <div class="sidebar">
           <h5>Welcome to django-blog!</h5>
           <p>
             This is a good blog.
@@ -98,8 +98,8 @@
                 Subscribe to django-blog RSS feed
             </a>
           </p>
-          <h5>Latest posts</h5>
-          {% show_latest_posts %}
+          <h5>Recent Articles</h5>
+          {% show_latest_articles %}
           <h5>Most commented posts</h5>
           {% get_most_commented_posts as most_commented_posts %}
           <ul>
