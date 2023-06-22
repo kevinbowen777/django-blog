@@ -7,6 +7,7 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 18px;
   margin-bottom: 5%;
+  background: #faebd7;
 }
 
 /* prevents footer from blocking body content */
@@ -15,32 +16,84 @@ body {
   height: 60px;
 }
 
+#content {
+  float:left;
+  width:65%;
+  padding:0 0 0 30px;
+}
+
+.jumbotron {
+  border-radius: 25px;
+  margin-top: 25px;
+}
+
+.sidebar {
+  float:right;
+  font-size: 12px;
+  width:30%;
+  margin-top: 10px;
+  margin-right: -10px;
+  padding:10px;
+  background:#deb887;
+  border-radius: 10px;
+  height:100%;
+}
+
+
+/* Sidebar links */
+.sidebar a {
+  /* display: block; */
+  color: #8b0000;
+  /* color: black; */
+  text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+  background-color: #000080;
+  color: black;
+  /* color: white; */
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  background-color: #f4a460;
+  border-radius: 5px;
+  color: white;
+}
+
 #footer {
   position: absolute;
-  bottom: 0;
   width: 100%;
+  height: 20px;
+}
+
+/* prevents footer from blocking body content */
+.clear {
+  clear: both;
   height: 60px;
 }
 
 a {
-    color:#00abff;
-    text-decoration:none;
+  /* color:#00abff; */
+  color:#00abff;
+  text-decoration:none;
 }
 
 h1 {
-    font-weight:normal;
-    border-bottom:1px solid #bbb;
-    padding:0 0 10px 0;
+  font-weight:normal;
+  border-bottom:1px solid #bbb;
+  padding:0 0 10px 0;
 }
 
 h2 {
-    font-weight:normal;
-    margin:30px 0 0;
+  font-weight:normal;
+  margin:30px 0 0;
 }
 
 h3 {
-    font-weight:normal;
-    margin:30px 0 0;
+  font-weight:normal;
+  margin:30px 0 3px 0;
 }
 
 ul.slim {
@@ -55,25 +108,14 @@ li.slim {
 }
 
 #content {
-    float:left;
-    width:65%;
+  float:left;
+  width:65%;
     padding:0 0 0 30px;
 }
 
 .jumbotron {
   border-radius: 5%;
   margin-top: 25px;
-}
-
-#sidebar {
-    float:right;
-    font-size: 12px;
-    width:30%;
-    margin: 10px;
-    padding:10px;
-    background:#deb887;
-    border-radius: 5%;
-    height:100%;
 }
 
 .post-entry {
@@ -126,13 +168,29 @@ li.slim {
 
 /* pagination */
 .pagination {
-    margin:40px 0;
-    font-weight:bold;
+  margin:40px 0;
+  font-weight:bold;
 }
 
 p.tags {
-    color:#4b0082;
-    font-family: georgia, serif;
-    font-size: 12px;
-    font-style: italic;
+  color:#4b0082;
+  font-family: georgia, serif;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.text-muted {
+  font-size: 14px;
+}
+
+.tags {
+  color:#4b0082;
+  font-family: georgia, serif;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.copyright {
+  color: white;
+  font-size: 70%;
 }
