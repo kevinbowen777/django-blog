@@ -3,47 +3,46 @@
 {% load posts_tags %}
 
 {% block content %}
-<div class="container">
-  <p>
-  {% if user.is_authenticated %}
-    <p class="text-muted">Hi {{ user.username }}!</p>
-  {% else %}
-    <p class="text-muted">You are not currently logged in.</p>
-  {% endif %}
-  <img class="pagepic" src="{% static 'images/charles_mingus.jpg' %}">
-  <ul>
-  {% if tag %}
-  <p>
-    <h2>Posts tagged with "{{ tag.name }}"</h2>
-  </p>
-  {% endif %}
-  {% for post in posts %}
-  <p>
-    <div class="post">
-      <div class="post-header">
-          <a class="font-weight-bold" href="{{ post.get_absolute_url }}">{{ post.title }}</a> &middot;
-          <p class="tags">
-            Tags:
-            {% for tag in post.tags.all %}
-              <a href="{% url "post_list_by_tag" tag.slug %}">
-                {{ tag.name }}
-              </a>
-              {% if not forloop.last %}, {% endif %}
-            {% endfor %}
+  <div class="container">
+    <p>
+      {% if user.is_authenticated %}
+        <p class="text-muted">Hi {{ user.username }}!</p>
+      {% else %}
+        <p class="text-muted">You are not currently logged in.</p>
+      {% endif %}
+      <img class="pagepic"
+           src="{% static 'images/charles_mingus.jpg' %}"
+           alt="Charles Mingus playing bass"
+           width="400"
+           height="250">
+      <ul>
+        {% if tag %}
+          <p>
+            <h2>Posts tagged with "{{ tag.name }}"</h2>
           </p>
-          <span class="text-muted">by {{ post.author }} | {{ post.publish }}</span>
-      </div>
-      <div class="post-body">
-        {{ post.body|markdown|truncatewords_html:30 }}
-      </div>
-      <div class="post-footer">
-      </div>
-    </div>
-  {% endfor %}
-  </ul>
-  </p>
-  </p>
-</div>
+        {% endif %}
+        {% for post in posts %}
+          <p>
+            <div class="post">
+              <div class="post-header">
+                <a class="font-weight-bold" href="{{ post.get_absolute_url }}">{{ post.title }}</a> ·
+                <p class="tags">
+                  Tags:
+                  {% for tag in post.tags.all %}
+                    <a href="{% url "post_list_by_tag" tag.slug %}">{{ tag.name }}</a>
+                    {% if not forloop.last %},{% endif %}
+                  {% endfor %}
+                </p>
+                <span class="text-muted">by {{ post.author }} | {{ post.publish }}</span>
+              </div>
+              <div class="post-body">{{ post.body|markdown|truncatewords_html:30 }}</div>
+              <div class="post-footer"></div>
+            </div>
+          {% endfor %}
+        </ul>
+      </p>
+    </p>
+  </div>
   {% include "pagination.html" with page=posts %}
-<div class="clear"></div>
+  <div class="clear"></div>
 {% endblock content %}
