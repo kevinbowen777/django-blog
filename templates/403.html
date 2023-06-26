@@ -1,14 +1,18 @@
 <!-- templates/403.html -->
 {% extends "base.html" %}
 
-{% block title %}Forbidden (403){% endblock title %}
+{% block title %}
+  Forbidden (403)
+{% endblock title %}
 
 {% block content %}
-<div class="container">
-  <p>
-    <h2>Forbidden (403)</h2>
-    <p>You do not have permission to view this directory or page using the
-    credentials supplied.</p>
-  </p>
-</div>
+  <div class="container">
+    <p>
+      <h2>Forbidden (403)</h2>
+      <p>
+        You do not have permission to view this directory or page using the
+        credentials supplied.
+      </p>
+    </p>
+  </div>
 {% endblock content %}

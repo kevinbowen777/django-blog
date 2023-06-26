@@ -1,17 +1,20 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load crispy_forms_tags %}
 
-{% block title %}Delete Post{% endblock title %}
+{% block title %}
+  Delete Post
+{% endblock title %}
+
 {% block content %}
-<div class="container">
-  <p>
-  <h2>Delete post</h2>
-    <form action="" method="post">
-      {% csrf_token %}
-      <p>Are you sure you want to delete "{{ post.title }}"?</p>
-      <input class="btn btn-danger" type="submit" value="Confirm">
-      <a class="btn btn-info" href="#" onclick="window.history.back()">Cancel</a>
-    </form>
-  </p>
-</div>
+  <div class="container">
+    <p>
+      <h2>Delete post</h2>
+      <form action="" method="post">
+        {% csrf_token %}
+        <p>Are you sure you want to delete "{{ post.title }}"?</p>
+        <input class="btn btn-danger" type="submit" value="Confirm">
+        <a class="btn btn-info" href="#" onclick="window.history.back()">Cancel</a>
+      </form>
+    </p>
+  </div>
 {% endblock content %}
