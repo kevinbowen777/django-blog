@@ -711,13 +711,13 @@ Django = ">=3.2"
 
 [[package]]
 name = "django-test-plus"
-version = "2.2.1"
+version = "2.2.2"
 description = "\"django-test-plus provides useful additions to Django's default TestCase\""
 optional = false
 python-versions = ">=3.6"
 files = [
-    {file = "django-test-plus-2.2.1.tar.gz", hash = "sha256:5eaacb7a26b88f12df06538ffe4ad44e81636e07003e4863ef704204069bd8bb"},
-    {file = "django_test_plus-2.2.1-py3-none-any.whl", hash = "sha256:980a0ef6705421485a63f93fee849420a4563552acfea83255e57372233c2133"},
+    {file = "django-test-plus-2.2.2.tar.gz", hash = "sha256:10173d470c36ebbcb402f22650051b22656e351a5f60a7cf10485eddfe77e388"},
+    {file = "django_test_plus-2.2.2-py3-none-any.whl", hash = "sha256:3563dd13eef52d6528e5671d7ad60bebc91a5fc5136681d228f4731b706845d6"},
 ]
 
 [package.extras]
@@ -861,13 +861,13 @@ doc = ["Sphinx", "sphinx-rtd-theme", "sphinxcontrib-spelling"]
 
 [[package]]
 name = "faker"
-version = "18.11.1"
+version = "18.11.2"
 description = "Faker is a Python package that generates fake data for you."
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "Faker-18.11.1-py3-none-any.whl", hash = "sha256:02980fe15acd58861305568bae0a277680792a505a5a45a309d352f79c452dd1"},
-    {file = "Faker-18.11.1.tar.gz", hash = "sha256:df4ee36d058a6a96de9d5e645571ef8536946a0b62db841494f8a3bc3bcdc5af"},
+    {file = "Faker-18.11.2-py3-none-any.whl", hash = "sha256:21c2c29638e98502f3bba9ad6a4f07a4b09c5e2150bb491ff02411a5888f6955"},
+    {file = "Faker-18.11.2.tar.gz", hash = "sha256:ec6e2824bb1d3546b36c156324b9df6bca5a3d6d03adf991e6a5586756dcab9d"},
 ]
 
 [package.dependencies]
