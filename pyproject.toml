@@ -69,6 +69,8 @@ Sphinx = "6.2.1"
 sphinx-rtd-theme = "^1.2.0"
 ruff = ">= 0.0.275, < 0.0.300"
 djlint = "^1.31.0"
+werkzeug = "^2.3.6"
+pyopenssl = "^23.2.0"
 
 [tool.black]
 line-length = 88
