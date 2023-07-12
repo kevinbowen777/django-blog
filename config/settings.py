@@ -1,4 +1,4 @@
-"""Settings for the news project."""
+"""Settings for the django-blog project."""
 from pathlib import Path
 
 # import socket  # noqa: E402 # Comment out if not using debug_toolbar
@@ -14,7 +14,7 @@ SECRET_KEY = env.str("SECRET_KEY")
 
 DEBUG = env.bool("DJANGO_DEBUG", default=False)
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["django-blog.cool", "localhost", "127.0.0.1"]
 
 # Application definition
 INSTALLED_APPS = [
