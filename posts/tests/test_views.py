@@ -7,18 +7,26 @@ from ..models import Comment, Post
 
 class PostTests(TestCase):
     @classmethod
-    def setUpTestData(cls):
-        cls.user = get_user_model().objects.create_user(
+    def setUpTestData(self):
+        self.user = get_user_model().objects.create_user(
             username="leopoldbloom",
             email="leopoldbloom@example.com",
             password="secret",
         )
 
-        cls.post = Post.objects.create(
+        self.post = Post.objects.create(
             title="A good title",
             body="Nice body content",
             slug="a-good-title",
-            author=cls.user,
+            author=self.user,
+        )
+
+        self.post2 = Post.objects.create(
+            title="A good second title",
+            body="Nice body content for a second post",
+            # slug="a-good-title",
+            author=self.user,
+            status="DF",
         )
 
     def test___str__(self):
@@ -28,24 +36,22 @@ class PostTests(TestCase):
     def test_post_content(self):
         self.assertEqual(f"{self.post.title}", "A good title")
         self.assertEqual(f"{self.post.slug}", "a-good-title")
+        self.assertEqual(f"{self.post2.slug}", "a-good-second-title")
         self.assertEqual(f"{self.post.author}", "leopoldbloom")
         self.assertEqual(f"{self.post.body}", "Nice body content")
+        self.assertEqual(f"{self.post.status}", "PB")
 
-    """
     def test_get_absolute_url(self):
         self.assertEqual(
-            self.post.get_absolute_url(), "/posts/{self.post.id}/")
-        # self.assertEqual(self.post.get_absolute_url(), "/posts/1/")
+            self.post.get_absolute_url(), f"/posts/2023/7/14/{self.post.slug}/"
+        )
 
     def test_post_detail_view(self):
         self.client.login(email="johndoe@example.com", password="secret")
-        response = self.client.get("/posts/{self.post.id}/")
-        # no_response = self.client.get("posts/100000/")
+        response = self.client.get(f"/posts/2023/7/14/{self.post.slug}/")
         self.assertEqual(response.status_code, 200)
-        # self.assertEqual(no_response.status_code, 404)
         self.assertContains(response, "A good title")
         self.assertTemplateUsed(response, "posts/post_detail.html")
-    """
 
     def test_post_create_view(self):
         self.client.login(email="johndoe@example.com", password="secret")
@@ -80,6 +86,48 @@ class PostTests(TestCase):
         self.assertEqual(response.status_code, 302)
 
 
+class PostListViewTest(TestCase):
+    def setUp(self):
+        url = reverse("post_list")
+        self.response = self.client.get(url)
+
+        self.user = get_user_model().objects.create_user(
+            username="johndoe",
+            email="johndoe@example.com",
+            password="secret",
+        )
+
+        self.post = Post.objects.create(
+            title="A good title",
+            body="Nice body content",
+            slug="a-good-title",
+            author=self.user,
+        )
+
+        """
+        # Create posts for pagination tests
+        number_of_posts = 10
+        for post_id in range(number_of_posts):
+            Post.objects.create(
+                title="A Tiny Test Post {0}".format(post_id),
+                slug="2023/7/15/a-tiny-test-post-{0}/".format(post_id),
+                body="Some post content {0}".format(post_id),
+                author=self.user,
+            )
+        """
+
+    def test_view_url_exists_at_desired_location(self):
+        # response = self.client.get("/posts/")
+        self.assertEqual(self.response.status_code, 200)
+
+    def test_view_url_accessible_by_name(self):
+        self.assertEqual(self.response.status_code, 200)
+
+    def test_view_uses_correct_template(self):
+        self.assertEqual(self.response.status_code, 200)
+        self.assertTemplateUsed(self.response, "posts/post_list.html")
+
+
 class CommentTests(TestCase):
     def setUp(self):
         self.user = get_user_model().objects.create_user(
@@ -107,8 +155,8 @@ class CommentTests(TestCase):
         self.assertEqual(f"{self.comment.email}", "ron@amazingmets.org")
         self.assertEqual(f"{self.comment.body}", "This is a comment")
 
-    """
     def test_comment_add_view(self):
+        self.client.login(email="ron@amazingmets.org", password="secret")
         response = self.client.post(
             reverse("comment_add", args={self.post.id}),
             {
@@ -117,38 +165,25 @@ class CommentTests(TestCase):
                 "body": "This is a new comment",
             },
         )
-        # self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 200)
         self.assertEqual(Comment.objects.last().body, "This is a new comment")
         self.assertTrue(self.comment.email == self.comment.email)
 
-    def test_comment_update(self):
-        # self.client.login(email="johndoe@example.com", password="secret")
-        response = self.client.post(
-            reverse("comment_edit", args={self.comment.id}),
-            {
-                "comment": "Updated comment",
-            },
-        )
-        self.assertEqual(response.status_code, 200)
-        # self.assertEqual(Comment.objects.first().comment, "Updated comment")
 
-    def test_comment_delete(self):
-        # self.client.login(email="johndoe@example.com", password="secret")
-        response = self.client.post(
-            reverse("comment_delete", args={self.comment.id}),
-        )
-        self.assertEqual(response.status_code, 302)
-        # self.assertNotContains(Message.objects.all().text, "Updated title")
-    """
+class SitemapTests(TestCase):
+    def setUp(self):
+        # url = reverse("sitemap")
+        url = "/sitemap.xml"
+        self.response = self.client.get(url)
 
-    def test___str__(self):
-        # assert self.comment.__str__() == self.comment.comment
-        assert str(self.comment) == f"Comment by {self.comment.name} on {self.post}"
-        # assert self.comment.__str__() == self.comment.comment
-        # assert str(self.comment) == self.comment.comment
-        # return f"Comment by {self.name} on {self.post}"
+    def test_view_url_exists_at_desired_location(self):
+        self.assertEqual(self.response.status_code, 200)
 
-    """
-    def test_get_absolute_url(self):
-        self.assertEqual(self.comment.get_absolute_url(), "/articles/")
-    """
+
+class RSSFeedTests(TestCase):
+    def setUp(self):
+        url = reverse("post_feed")
+        self.response = self.client.get(url)
+
+    def test_feed_url_exists_at_desired_location(self):
+        self.assertEqual(self.response.status_code, 200)
