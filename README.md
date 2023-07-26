@@ -43,10 +43,7 @@ django-blog is a web blog application built with Django 4.2.x
          - [black](https://pypi.org/project/black/) (`nox -s black`)
          - [Sphinx](https://pypi.org/project/Sphinx/) documentaion generation (`nox -s lint`)
          - linting
-             - [flake8](https://pypi.org/project/flake8/)
-             - [flake8-bandit](https://pypi.org/project/flake8-bandit/)
-             - [flake8-bugbear](https://pypi.org/project/flake8-bugbear/)
-             - [flake8-import-order](https://pypi.org/project/flake8-import-order/)
+             - [ruff](https://beta.ruff.rs/docs/)
          - [safety](https://pypi.org/project/safety/)(python package vulnerability testing) (`nox -s safety`)
          - [pytest](https://docs.pytest.org/en/latest/) sessions with
            [pytest-cov](https://pypi.org/project/pytest-cov/) &
@@ -65,7 +62,7 @@ able to run `run` instead of `./run`.*
 
 ### Installation
  - `git clone https://github.com/kevinbowen777/django-blog.git`
- - `cd django_start`
+ - `cd django-blog`
  - Local installation:
      - `poetry shell`
      - `poetry install`
@@ -85,6 +82,10 @@ able to run `run` instead of `./run`.*
  - Pre-commit:
      - To add the hook, run the following command in the poetry shell:
          - `pre-commit install`
+         - `pre-commit autoupdate`
+ - Documentation
+     - `nox -s docs-3.11`
+     - Open browser to `docs/_build/index.html`
 
 ---
 
