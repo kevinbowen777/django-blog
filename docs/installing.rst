@@ -1,0 +1,48 @@
+Installation
+============
+
+How to install and use the project
+----------------------------------
+
+To install the django-blog project, run this command in your terminal:
+
+.. code-block:: console
+
+   $ git clone https://github.com/kevinbowen777/django-blog.git
+   $ cd django-blog
+
+After the repository has been successfully cloned, see the :doc:`configuring` section for
+instructions on setting up your environment and starting the local server.
+
+Local installation
+------------------
+
+.. code-block:: console
+
+   $ poetry shell
+   $ poetry install
+   $ python manage.py migrate
+   $ python manage.py createsuperuser
+
+Docker installation
+-------------------
+
+.. code-block:: console
+
+   $ docker compose up --build
+   $ docker compose python manage.py migrate
+   $ docker compose python manage.py createsuperuser
+   Additional commands:
+   $ docker compose exec web python manage.py shell_plus
+     (loads Django shell autoloading project models & classes)
+   $ docker run -it django-blog-web bash
+     (CLI access to container)
+
+Pre-commit installation
+-----------------------
+   To add the hook, run the following command in the poetry shell:
+
+.. code-block:: console
+
+   $ pre-commit install
+   $ pre-commit autoupdate
