@@ -210,9 +210,9 @@ gunicorn==21.2.0 ; python_version >= "3.10" and python_version < "4.0" \
 idna==3.4 ; python_version >= "3.10" and python_version < "4.0" \
     --hash=sha256:814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4 \
     --hash=sha256:90b77e79eaa3eba6de819a0c442c0b4ceefc341a7a2ab77d7562bf49f425c5c2
-markdown==3.4.3 ; python_version >= "3.10" and python_version < "4.0" \
-    --hash=sha256:065fd4df22da73a625f14890dd77eb8040edcbd68794bcd35943be14490608b2 \
-    --hash=sha256:8bf101198e004dc93e84a12a7395e31aac6a9c9942848ae1d99b9d72cf9b3520
+markdown==3.4.4 ; python_version >= "3.10" and python_version < "4.0" \
+    --hash=sha256:225c6123522495d4119a90b3a3ba31a1e87a70369e03f14799ea9c0d7183a3d6 \
+    --hash=sha256:a4c1b65c0957b4bd9e7d86ddc7b3c9868fb9670660f6f99f6d1bca8954d5a941
 marshmallow==3.20.1 ; python_version >= "3.10" and python_version < "4.0" \
     --hash=sha256:5d2371bbe42000f2b3fb5eaa065224df7d8f8597bc19a1bbfa5bfe7fba8da889 \
     --hash=sha256:684939db93e80ad3561392f47be0230743131560a41c5110684c16e21ade0a5c
