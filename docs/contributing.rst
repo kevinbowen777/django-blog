@@ -8,6 +8,6 @@ this repository and modify as you see fit.
 Reporting Bugs
 ==============
 
-Visit the django-blog issues_ on GitHub a bug, error, or typo.
+Please visit the django-blog issues_ page on GitHub to report a bug, error, or typo.
 
 .. _issues: https://github.com/kevinbowen777/django-blog/issues
