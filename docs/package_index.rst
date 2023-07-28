@@ -1,7 +1,7 @@
 Package Index
 =============
 
-The following is a list some of the major Python packages being used for
+The following is a list of the primary Python packages being used for
 the django-blog_ application.
 For a complete list of packages explicitly added to the project, view the
 pyproject.toml_ file. For a list of *all* of the package, see the requirements.txt_ file.
