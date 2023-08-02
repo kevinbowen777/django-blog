@@ -1,3 +1,5 @@
+from datetime import datetime as dt
+
 from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import reverse  # noqa:F401
@@ -6,8 +8,7 @@ from ..models import Comment, Post
 
 
 class PostTests(TestCase):
-    @classmethod
-    def setUpTestData(self):
+    def setUp(self):
         self.user = get_user_model().objects.create_user(
             username="leopoldbloom",
             email="leopoldbloom@example.com",
@@ -28,6 +29,7 @@ class PostTests(TestCase):
             author=self.user,
             status="DF",
         )
+        self.slug_time = dt.now().strftime("%Y/%-m/%-d")
 
     def test___str__(self):
         assert self.post.__str__() == self.post.title
@@ -43,12 +45,12 @@ class PostTests(TestCase):
 
     def test_get_absolute_url(self):
         self.assertEqual(
-            self.post.get_absolute_url(), f"/posts/2023/7/14/{self.post.slug}/"
+            self.post.get_absolute_url(), f"/posts/{self.slug_time}/{self.post.slug}/"
         )
 
     def test_post_detail_view(self):
         self.client.login(email="johndoe@example.com", password="secret")
-        response = self.client.get(f"/posts/2023/7/14/{self.post.slug}/")
+        response = self.client.get(f"/posts/{self.slug_time}/{self.post.slug}/")
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "A good title")
         self.assertTemplateUsed(response, "posts/post_detail.html")
