@@ -2,14 +2,18 @@
 name = "django-blog"
 version = "0.2.0"
 description = "A simple blog built with Django"
-authors = ["Kevin Bowen <kevin.bowen@gmail.com>"]
+authors = [
+    "Kevin Bowen <kevin.bowen@gmail.com>"
+]
+maintainers = [
+]
 license = "MIT"
 
 readme = "README.md"
 
 homepage = ""
 repository = "https://github.com/kevinbowen777/django-blog.git"
-documentation = ""
+documentation = "file. README.rst"
 
 keywords = ["django", "web-application", "blog"]
 
@@ -33,7 +37,7 @@ classifiers = [
 
 [tool.poetry.dependencies]
 python = "^3.10"
-Django = "4.2.3"
+Django = "4.2.4"
 
 django-crispy-forms = "^2.0"
 django-extensions = "^3.1.5"
