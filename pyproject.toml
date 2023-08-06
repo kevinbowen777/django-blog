@@ -44,7 +44,7 @@ django-extensions = "^3.1.5"
 environs = { version = "^9.5.0", extras = ["django"] }
 django-allauth = "^0.54.0"
 whitenoise = "^6.1.0"
-psycopg2-binary = "2.9.6"
+psycopg2-binary = "^2.9.5"
 Pillow = "^10.0"
 django-countries = "^7.3.2"
 gunicorn = "^21.0"
@@ -92,19 +92,18 @@ exclude = '''
 )/
 '''
 
-[tool.coverage.paths]
-source = ["accounts", "config", "pages", "posts"]
-
 [tool.coverage.run]
 branch = true
-source = ["config"]
-show_missing = true
+dynamic_context = "test_function"
+source = ["accounts", "config", "pages", "posts"]
 omit = [
-    "*conftest.py",
-    "*manage.py",
-    "*settings*.py",
+    "conftest.py",
+    "manage.py",
+    "settings.py",
     "*test.py",
-    "*wsgi.py",
+    "asgi.py",
+    "gunicorn.py",
+    "wsgi.py",
     "*/__init__.py",
     "*/migrations/*",
     "*/factories.py",
