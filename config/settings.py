@@ -74,6 +74,7 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
             ],
+            "debug": True,
         },
     },
 ]
@@ -89,7 +90,7 @@ DATABASES = {
             "DATABASE_URL", default="postgres://postgres@db/postgres"
         ),
         "NAME": env.str("POSTGRES_DB", "postgres"),
-        "USER": env.str("POSTGRES_USER", "fakeuser"),
+        "USER": env.str("POSTGRES_USER", default="fakeuser"),
         "PASSWORD": env.str("POSTGRES_PASSWORD", "password"),
         "HOST": env.str("POSTGRES_HOST", "db"),
         "PORT": env.int("POSTGRES_PORT", "5432"),
