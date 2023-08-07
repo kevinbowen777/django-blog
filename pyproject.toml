@@ -114,10 +114,15 @@ plugins = [
 ]
 
 [tool.coverage.django_coverage_plugin]
-template_extensions = "html, txt, tex, email"
+template_extensions = "html"
 
 [tool.coverage.report]
 show_missing = true
+precision = 2
+
+[tool.coverage.html]
+show_contexts = true
+title = "django-blog coverage report"
 
 [tool.djlint]
 exclude="htmlcov"

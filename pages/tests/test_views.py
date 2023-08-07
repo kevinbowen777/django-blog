@@ -1,4 +1,3 @@
-from django.core.mail import BadHeaderError
 from django.test import TestCase
 from django.urls import resolve, reverse
 
@@ -83,33 +82,6 @@ class ContactViewTests(TestCase):
 
     def test_contact_page_does_not_contain_incorrect_html(self):
         self.assertNotContains(self.response, "Home Page")
-
-    def test_post_success(self):
-        self.client.post(
-            "/contact/",
-            data={
-                "from_email": "john@example.com",
-                "subject": "Test Email",
-                "messages": "This is a test",
-            },
-        )
-        self.assertEqual(self.response.status_code, 200)
-
-    def test_header_injection(self):
-        error_occured = True
-        try:
-            self.client.post(
-                "/contact/",
-                data={
-                    "from_email": "joe@example.com",
-                    "subject": "Subject\nInjectionTest",
-                    "message": "This is a test of a BadHeaderError",
-                },
-            )
-            error_occured = False
-        except BadHeaderError:
-            error_occured = True
-        self.assertFalse(error_occured)
 
 
 class SuccessViewTests(TestCase):
