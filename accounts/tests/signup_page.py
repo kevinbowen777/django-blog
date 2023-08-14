@@ -4,7 +4,6 @@ from django.urls import reverse
 
 
 class SignupTests(TestCase):
-
     username = "newuser"
     email = "newuser@example.com"
 
@@ -21,9 +20,7 @@ class SignupTests(TestCase):
     def test_signup_form(self):
         new_user = get_user_model().objects.create_user(  # noqa:F841
             self.username, self.email
-        )  # noqa:F841
-        self.assertEqual(get_user_model().objects.all().count(), 1)
-        self.assertEqual(
-            get_user_model().objects.all()[0].username, self.username
         )
+        self.assertEqual(get_user_model().objects.all().count(), 1)
+        self.assertEqual(get_user_model().objects.all()[0].username, self.username)
         self.assertEqual(get_user_model().objects.all()[0].email, self.email)
