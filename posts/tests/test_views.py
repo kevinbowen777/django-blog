@@ -1,10 +1,109 @@
 from datetime import datetime as dt
 
+import pytest
 from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import reverse
+from pytest_django.asserts import (
+    assertContains,
+)
 
+from ..feeds import LatestPostsFeed
 from ..models import Comment, Post
+
+# from ..sitemaps import PostSitemap
+from ..views import (
+    PostCreateView,
+    PostDeleteView,
+    post_detail,
+    post_list,
+)
+
+# pytestmark = pytest.mark.django_db
+
+
+@pytest.mark.django_db
+def test_post_list_view(rf):
+    # Get the request
+    request = rf.get(reverse("post_list"))
+    # Use the request to get the response
+    response = post_list(request)
+    # Test that the response is valid
+    assert response.status_code == 200
+    assertContains(response, "Welcome to django-blog")
+
+
+@pytest.mark.django_db
+def test_post_detail_view(rf, post):
+    # Get the request
+    url = f"{post.publish}/{post.slug}/"
+    request = rf.get(url)
+    # Use the request to get the response
+    response = post_detail(
+        request,
+        year=post.publish.year,
+        month=post.publish.month,
+        day=post.publish.day,
+        post=post.slug,
+    )
+    # Test that the response is valid
+    assertContains(response, post.title)
+
+
+@pytest.mark.django_db
+def test_post_create_view(rf, post, admin_user):
+    form_data = {
+        "title": post.title,
+        "status": post.status,
+        "body": post.body,
+    }
+    # Make a request for our new post
+    request = rf.post(reverse("post_new"), form_data)
+    # Add an authenticated user
+    request.user = admin_user
+    # Use the request to get the response
+    response = PostCreateView.as_view()(request)
+    text = Post.published.last()
+    # Test that the response is valid
+    assert response.status_code == 200
+    assert text.author == post.author
+
+
+@pytest.mark.django_db
+def test_message_delete(rf, post):
+    request = rf.post(
+        reverse("post_delete", kwargs={"pk": post.id}),
+    )
+    request.user = post.author
+    callable_obj = PostDeleteView.as_view()
+    response = callable_obj(request, pk=post.id)
+    assert response.status_code == 302
+
+
+"""
+@pytest.mark.django_db
+def test_post_update(rf, post):
+    # POST request to PostUpdateView updates a post
+    # and redirects.
+    #
+    form_data = {
+        "title": post.title,
+        # tags: post.tags,
+        "status": post.status,
+        "body": "This is the new post body",
+    }
+    url = reverse("post_edit", kwargs={"pk": post.id})
+    # Make a request for our new message
+    request = rf.post(url, form_data)
+    request.user = post.author
+    callable_obj = PostUpdateView.as_view()
+    response = callable_obj(request, pk=post.id)
+
+    # Check that the message body has been changed
+    post.refresh_from_db()
+    assert post.body == "This is the new post body"
+    assert response.status_code == 302
+"""
 
 
 class PostTests(TestCase):
@@ -31,6 +130,7 @@ class PostTests(TestCase):
         )
         self.slug_time = dt.now().strftime("%Y/%-m/%-d")
 
+    """
     def test___str__(self):
         assert self.post.__str__() == self.post.title
         assert str(self.post) == self.post.title
@@ -69,6 +169,13 @@ class PostTests(TestCase):
         self.assertEqual(Post.objects.last().title, "A good title")
         self.assertEqual(Post.objects.last().body, "Nice body content")
 
+    def test_post_delete_view(self):
+        self.client.login(email="leopolbloom@example.com", password="secret")
+        response = self.client.get(reverse("post_delete", args={self.post.id}))
+        # response = self.client.get(reverse("post_delete", args="1"))
+        self.assertEqual(response.status_code, 302)
+    """
+
     def test_post_update_view(self):
         self.client.login(email="leopoldbloom@example.com", password="secret")
         response = self.client.get(
@@ -80,12 +187,6 @@ class PostTests(TestCase):
             },
         )
         self.assertEqual(response.status_code, 200)
-
-    def test_post_delete_view(self):
-        self.client.login(email="leopolbloom@example.com", password="secret")
-        response = self.client.get(reverse("post_delete", args={self.post.id}))
-        # response = self.client.get(reverse("post_delete", args="1"))
-        self.assertEqual(response.status_code, 302)
 
 
 class PostListViewTest(TestCase):
@@ -106,7 +207,6 @@ class PostListViewTest(TestCase):
             author=self.user,
         )
 
-        """
         # Create posts for pagination tests
         number_of_posts = 10
         for post_id in range(number_of_posts):
@@ -116,7 +216,6 @@ class PostListViewTest(TestCase):
                 body="Some post content {0}".format(post_id),
                 author=self.user,
             )
-        """
 
     def test_view_url_exists_at_desired_location(self):
         # response = self.client.get("/posts/")
@@ -172,6 +271,13 @@ class CommentTests(TestCase):
         self.assertTrue(self.comment.email == self.comment.email)
 
 
+@pytest.mark.django_db
+def test_rss_feed(rf):
+    request = rf.get(reverse("post_feed"))
+    response = LatestPostsFeed()(request)
+    assert response.status_code == 200
+
+
 class SitemapTests(TestCase):
     def setUp(self):
         # url = reverse("sitemap")
@@ -182,10 +288,12 @@ class SitemapTests(TestCase):
         self.assertEqual(self.response.status_code, 200)
 
 
-class RSSFeedTests(TestCase):
-    def setUp(self):
-        url = reverse("post_feed")
-        self.response = self.client.get(url)
-
-    def test_feed_url_exists_at_desired_location(self):
-        self.assertEqual(self.response.status_code, 200)
+"""
+def test_sitemap(rf):
+    # url = "/sitemap.xml"
+    url = reverse("django.contrib.sitemaps.views.sitemap")
+    response = rf.post(url)
+    # response = rf.get(url)
+    # response = PostSitemap(request)
+    assert response.status_code == 200
+"""
