@@ -1,70 +1,15 @@
-from django.test import TestCase
+from datetime import datetime as dt
 
-from accounts.tests.factories import UserFactory
+import pytest
 
-from .factories import PostFactory
-
-
-class PostTests(TestCase):
-    def setUp(self):
-        self.user = UserFactory()
-        self.post = PostFactory()
-        """
-        self.review = Review.objects.create(
-            post=self.post,
-            creator=self.user,
-            review="An excellent review",
-        )
-        """
-
-    def test__str__(self):
-        assert self.post.__str__() == self.post.title
-        assert str(self.post) == self.post.title
-
-    """
-    def test_get_absolute_url(self):
-        url = self.post.get_absolute_url()
-        assert url == f"/posts/{self.post.id}/"
-    """
+pytestmark = pytest.mark.django_db
 
 
-"""
-    def test_review__str__(self):
-        assert self.review.__str__() == self.review.review
-        assert str(self.review) == self.review.review
-
-    def test_review_get_absolute_url(self):
-        url = self.review.get_absolute_url()
-        assert url == f'{"/posts/"}'
+def test_post___str__(post):
+    assert post.__str__() == post.title
+    assert str(post) == post.title
 
 
-from django.test import TestCase
-
-
-class PostTests(TestCase):
-    def setUp(self):
-        self.user = UserFactory()
-        self.post = PostFactory()
-        self.review = Review.objects.create(
-            post=self.post,
-            creator=self.user,
-            review="An excellent review",
-        )
-
-    def test__str__(self):
-        assert self.post.__str__() == self.post.title
-        assert str(self.post) == self.post.title
-
-    def test_get_absolute_url(self):
-        url = self.post.get_absolute_url()
-        assert url == f"/posts/{self.post.id}/"
-
-
-    def test_review__str__(self):
-        assert self.review.__str__() == self.review.review
-        assert str(self.review) == self.review.review
-
-    def test_review_get_absolute_url(self):
-        url = self.review.get_absolute_url()
-        assert url == f'{"/posts/"}'
-"""
+def test_post_get_absolute_url(post):
+    slug_time = dt.now().strftime("%Y/%-m/%-d")
+    assert post.get_absolute_url() == f"/posts/{slug_time}/{post.slug}/"
