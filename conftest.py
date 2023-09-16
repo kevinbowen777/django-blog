@@ -16,7 +16,7 @@ def user():
 
 
 @pytest.fixture
-def request_factory() -> RequestFactory:
+def request_factory():
     return RequestFactory()
 
 
