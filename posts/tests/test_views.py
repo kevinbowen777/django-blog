@@ -8,7 +8,6 @@ from pytest_django.asserts import (
     assertContains,
 )
 
-from ..feeds import LatestPostsFeed
 from ..models import Comment, Post
 
 # from ..sitemaps import PostSitemap
@@ -229,6 +228,22 @@ class PostListViewTest(TestCase):
         self.assertTemplateUsed(self.response, "posts/post_list.html")
 
 
+@pytest.mark.django_db
+def test_comment_add(client, post, user):
+    client.login(email=user.email, password="P@s5word")
+    # form = "templates/articles/includes/comment_form.html"
+    response = client.post(
+        reverse("comment_add", kwargs={"post_id": post.id}),
+        {
+            "name": "John Doe",
+            "email": "johndoe@example.com",
+            "body": "This is a new comment",
+        },
+    )
+
+    assert response.status_code, 200
+
+
 class CommentTests(TestCase):
     def setUp(self):
         self.user = get_user_model().objects.create_user(
@@ -272,12 +287,27 @@ class CommentTests(TestCase):
 
 
 @pytest.mark.django_db
-def test_rss_feed(rf):
-    request = rf.get(reverse("post_feed"))
-    response = LatestPostsFeed()(request)
+def test_sitemap(client, ten_posts):
+    response = client.get("/sitemap.xml")
+    xml = response.content.decode("utf-8")
+    expected_posts = [p for p in ten_posts]
     assert response.status_code == 200
+    assert len(expected_posts) == 10
+    assert "<lastmod>" in xml
 
 
+@pytest.mark.django_db
+def test_rssfeed(client, ten_posts):
+    response = client.get(reverse("post_feed"))
+    xml = response.content.decode("utf-8")
+    expected_posts = [p for p in ten_posts]
+    assert len(expected_posts) == 10
+    assert response["Content-Type"] == "application/rss+xml; charset=utf-8"
+    assert response.status_code == 200
+    assert "<title>django-blog</title>" in xml
+
+
+"""
 class SitemapTests(TestCase):
     def setUp(self):
         # url = reverse("sitemap")
@@ -288,7 +318,6 @@ class SitemapTests(TestCase):
         self.assertEqual(self.response.status_code, 200)
 
 
-"""
 def test_sitemap(rf):
     # url = "/sitemap.xml"
     url = reverse("django.contrib.sitemaps.views.sitemap")
