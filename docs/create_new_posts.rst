@@ -117,7 +117,7 @@ Sample post list
     )
     Post.objects.create(
         author = User.objects.get(username="susan"),
-        title  = "Who was Django Reinhardt?"
+        title  = "Who was Django Reinhardt?",
         slug   = "who-was-django-reinhardt",
         body   = "Jean Reinhardt (23 January 1910 – 16 May 1953), known by his Romani nickname Django (French: [dʒãŋɡo ʁɛjnaʁt] or [dʒɑ̃ɡo ʁenɑʁt]), was a Romani-Belgian jazz guitarist and composer. He was one of the first major jazz talents to emerge in Europe and has been hailed as one of its most significant exponents.\r\n\nWith violinist Stéphane Grappelli,[2] Reinhardt formed the Paris-based Quintette du Hot Club de France in 1934. The group was among the first to play jazz that featured the guitar as a lead instrument.[5] Reinhardt recorded in France with many visiting American musicians, including Coleman Hawkins and Benny Carter, and briefly toured the United States with Duke Ellington's orchestra in 1946. He died suddenly of a stroke in 1953 at the age of 43.",
         status = "PB",
