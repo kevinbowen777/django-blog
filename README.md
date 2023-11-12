@@ -39,7 +39,7 @@ django-blog is a web blog application built with Django 4.2.x
      - [Debug-toolbar](https://pypi.org/project/django-debug-toolbar/) available. See notes in `config/settings.py` for enabling.
      - Examples of using [Factories](https://pypi.org/project/factory-boy/) & [pytest](https://pypi.org/project/pytest/) fixtures in account app testing
      - [shell_plus](https://django-extensions.readthedocs.io/en/latest/shell_plus.html) with [IPython](https://pypi.org/project/ipython/) via [django-extensions](https://pypi.python.org/pypi/django-extensions/) package
-     - [Nox](https://pypi.org/project/nox/) testing sessions for latest Python 3.9, 3.10, 3.11, and 3.12 
+     - [Nox](https://pypi.org/project/nox/) testing sessions for latest Python 3.10, 3.11, and 3.12
          - [black](https://pypi.org/project/black/) (`nox -s black`)
          - [Sphinx](https://pypi.org/project/Sphinx/) documentaion generation (`nox -s lint`)
          - linting
@@ -47,16 +47,16 @@ django-blog is a web blog application built with Django 4.2.x
          - [safety](https://pypi.org/project/safety/)(python package vulnerability testing) (`nox -s safety`)
          - [pytest](https://docs.pytest.org/en/latest/) sessions with
            [pytest-cov](https://pypi.org/project/pytest-cov/) &
-           [pytest-django](https://pypi.org/project/pytest-django/) (`coverage run -m pytest`) 
+           [pytest-django](https://pypi.org/project/pytest-django/) (`coverage run -m pytest`)
   - `run` command menu
-      
+
     (adapted from Nick Janetakis' helpful [docker-django-example](https://github.com/nickjj/docker-django-example))
-      
-    You can run `./run` to get a list of commands and each command has documentation in the run file itself. This comes in handy to run various Docker commands because sometimes these commands can be a bit long to type. 
-      
+
+    You can run `./run` to get a list of commands and each command has documentation in the run file itself. This comes in handy to run various Docker commands because sometimes these commands can be a bit long to type.
+
     *If you get tired of typing `./run` you can always create a shell alias with
 `alias run=./run` in your `~/.bash_aliases` or equivalent file. Then you'll be
-able to run `run` instead of `./run`.*  
+able to run `run` instead of `./run`.*
 
 ---
 
@@ -92,20 +92,20 @@ able to run `run` instead of `./run`.*
 ### Testing
  - `docker compose exec web python manage.py test`
  - `coverage run -m pytest`
- - Nox (includes sessions for black, lint, safety, tests)
-     - testing supported for Python 3.9, 3.10, 3.11, 3.12
+ - Nox (includes sessions for black, lint, pyright, safety, tests)
+     - testing supported for Python 3.10, 3.11, 3.12
      - e.g. `nox`, `nox -rs lint-3.11`, `nox -s tests`
        - `nox`
        - `nox -s black-3.12`
        - `nox -s docs-3.11`
-       - `nox -rs lint-3.9` (Use the 'r' flag to reuse existing session)
+       - `nox -rs lint-3.10` (Use the 'r' flag to reuse existing session)
        - `nox -s safety` (will run tests against all Python versions)
        - `nox -s tests`
 
 ---
 
 ### Application Demo
-A live application demonstration hosted at ~~Heroku~~:
+
  - TBD
 
 ---
