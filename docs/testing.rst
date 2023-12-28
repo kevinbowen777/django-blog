@@ -58,11 +58,11 @@ Below are some example of ``nox`` commands run locally:
 
    $ nox --list-sessions
    $ nox
-   $ nox -s black-3.12 
-   $ nox -s docs-3.11 
+   $ nox -s black-3.12
+   $ nox -s docs-3.11
    $ nox -rs lint-3.9  (Use the 'r' flag to reuse existing session)
    $ nox -s safety  (will run tests against all Python versions)
-   $ nox -s tests 
+   $ nox -s tests
 
 Below are examples of ``nox`` tests run against the Docker container:
 
@@ -71,8 +71,8 @@ Below are examples of ``nox`` tests run against the Docker container:
    $ docker compose exec web python manage.py test
    $ docker compose exec web nox --list-sessions
    $ docker compose exec web nox
-   $ docker compose exec web nox -s black-3.12 
-   $ docker compose exec web nox -s docs-3.11 
+   $ docker compose exec web nox -s black-3.12
+   $ docker compose exec web nox -s docs-3.11
    $ docker compose exec web nox -rs lint-3.9  (Use the 'r' flag to reuse existing session)
    $ docker compose exec web nox -s safety  (will run tests against all Python versions)
-   $ docker compose exec web nox -s tests 
+   $ docker compose exec web nox -s tests
