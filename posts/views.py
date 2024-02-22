@@ -97,6 +97,7 @@ def post_share(request, post_id):
     if request.method == "POST":
         form = EmailPostForm(request.POST)
         if form.is_valid():
+            # fmt: off
             cd = form.cleaned_data
             post_url = request.build_absolute_uri(post.get_absolute_url())
             subject = f"{cd['name']} recommends you read " f"{post.title}"
@@ -106,6 +107,7 @@ def post_share(request, post_id):
             )
             send_mail(subject, message, "kevin.bowen@gmail.com", [cd["to"]])
             sent = True
+            # fmt: on
     else:
         form = EmailPostForm()
     return render(
