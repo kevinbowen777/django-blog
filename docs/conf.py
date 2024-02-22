@@ -1,4 +1,5 @@
 """Sphinx configuration."""
+
 project = "django-blog"
 author = "Kevin Bowen"
 copyright = f"2023, {author}"

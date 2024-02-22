@@ -1,4 +1,5 @@
 """Nox sessions - django_blog."""
+
 import tempfile
 
 import nox
@@ -68,7 +69,7 @@ def lint(session):
         session,
         "ruff",
     )
-    session.run("ruff", "check", *args)
+    session.run("ruff", "check", ".", *args)
 
 
 @nox.session(python=PYTHON_VERSIONS)
