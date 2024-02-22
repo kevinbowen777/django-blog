@@ -213,9 +213,6 @@ django-extensions==3.2.3 ; python_version >= "3.10" and python_version < "4.0" \
 django-taggit==4.0.0 ; python_version >= "3.10" and python_version < "4.0" \
     --hash=sha256:4d52de9d37245a9b9f98c0ec71fdccf1d2283e38e8866d40a7ae6a3b6787a161 \
     --hash=sha256:eb800dabef5f0a4e047ab0751f82cf805bc4a9e972037ef12bf519f52cd92480
-django-types==0.19.1 ; python_version >= "3.10" and python_version < "4.0" \
-    --hash=sha256:5ae7988612cf6fbc357b018bbc3b3a878b65e04275cc46e0d35d66a708daff12 \
-    --hash=sha256:b3f529de17f6374d41ca67232aa01330c531bbbaa3ac4097896f31ac33c96c30
 environs[django]==10.3.0 ; python_version >= "3.10" and python_version < "4.0" \
     --hash=sha256:cc421ddb143fa30183568164755aa113a160e555cd19e97e664c478662032c24 \
     --hash=sha256:feeaf28f17fd0499f9cd7c0fcf408c6d82c308e69e335eb92d09322fc9ed8138
@@ -397,9 +394,6 @@ requests-oauthlib==1.3.1 ; python_version >= "3.10" and python_version < "4.0" \
 sqlparse==0.4.4 ; python_version >= "3.10" and python_version < "4.0" \
     --hash=sha256:5430a4fe2ac7d0f93e66f1efc6e1338a41884b7ddf2a350cedd20ccc4d9d28f3 \
     --hash=sha256:d446183e84b8349fa3061f0fe7f06ca94ba65b426946ffebe6e3e8295332420c
-types-psycopg2==2.9.21.20240218 ; python_version >= "3.10" and python_version < "4.0" \
-    --hash=sha256:3084cd807038a62c80fb5be78b41d855b48a060316101ea59fd85c302efb57d4 \
-    --hash=sha256:cac96264e063cbce28dee337a973d39e6df4ca671252343cb4f8e5ef6db5e67d
 typing-extensions==4.9.0 ; python_version >= "3.10" and python_version < "4.0" \
     --hash=sha256:23478f88c37f27d76ac8aee6c905017a143b0b1b886c3c9f66bc2fd94f9f5783 \
     --hash=sha256:af72aea155e91adfc61c3ae9e0e342dbc0cba726d6cba4b6c72c1f34e47291cd
