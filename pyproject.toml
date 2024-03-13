@@ -92,14 +92,14 @@ omit = [
     "conftest.py",
     "manage.py",
     "settings.py",
-    "*test.py",
+    # "*test.py",
     "asgi.py",
     "gunicorn.py",
     "wsgi.py",
     "*/__init__.py",
     "*/migrations/*",
     "*/factories.py",
-    "*/tests/*",
+    # "*/tests/*",
 ]
 plugins = [
     "django_coverage_plugin",
