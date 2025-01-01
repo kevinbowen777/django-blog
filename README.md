@@ -2,10 +2,10 @@
 
 <div align="center">
 
-  [![Status](https://img.shields.io/badge/status-active-success.svg)]() 
+  [![Status](https://img.shields.io/badge/status-active-success.svg)]()
   [![GitHub Issues](https://img.shields.io/github/issues/kevinbowen777/django-blog.svg)](https://github.com/kevinbowen777/django-blog/issues)
   [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
-  [![Coverage](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/kevinbowen777/261b3eac2838cf0bc3b365335c8323df/raw/covbadge.json)](https://kevinbowen777.github.io/django-blog/)
+  [![Coverage](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/kevinbowen777/6ce14ca8e71f4c089dc4a2a9b6d75d0d/raw/django-blog_covbadge.json)](https://kevinbowen777.github.io/django-blog/)
 
 </div>
 
