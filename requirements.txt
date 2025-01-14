@@ -30,18 +30,18 @@ django-extensions==3.2.3 ; python_full_version >= "3.10.0" and python_full_versi
 django-taggit==5.0.1 ; python_full_version >= "3.10.0" and python_full_version < "3.14.0" \
     --hash=sha256:a0ca8a28b03c4b26c2630fd762cb76ec39b5e41abf727a7b66f897a625c5e647 \
     --hash=sha256:edcd7db1e0f35c304e082a2f631ddac2e16ef5296029524eb792af7430cab4cc
-environs[django]==14.0.0 ; python_full_version >= "3.10.0" and python_full_version < "3.14.0" \
-    --hash=sha256:02c50088c459a2b21d6530cacd173c7528c38a723aae2791a863266ca41d9eeb \
-    --hash=sha256:7b19816c2766b683a40946dc030fdee97eb108751ea1789a0850e93ee4aa1d6f
+environs[django]==14.1.0 ; python_full_version >= "3.10.0" and python_full_version < "3.14.0" \
+    --hash=sha256:a5f2afe9d5a21b468e74a3cceacf5d2371fd67dbb9a7e54fe62290c75a09cdfa \
+    --hash=sha256:a7edda1668ddf1fbfcb7662bdc242dac25648eff2c7fdbaa5d959693afed7a3e
 gunicorn==23.0.0 ; python_full_version >= "3.10.0" and python_full_version < "3.14.0" \
     --hash=sha256:ec400d38950de4dfd418cff8328b2c8faed0edb0d517d3394e457c317908ca4d \
     --hash=sha256:f014447a0101dc57e294f6c18ca6b40227a4c90e9bdb586042628030cba004ec
 markdown==3.7 ; python_full_version >= "3.10.0" and python_full_version < "3.14.0" \
     --hash=sha256:2ae2471477cfd02dbbf038d5d9bc226d40def84b4fe2986e49b59b6b472bbed2 \
     --hash=sha256:7eb6df5690b81a1d7942992c97fad2938e956e79df20cbc6186e9c3a77b1c803
-marshmallow==3.25.0 ; python_full_version >= "3.10.0" and python_full_version < "3.14.0" \
-    --hash=sha256:50894cd57c6b097a6c6ed2bf216af47d10146990a54db52d03e32edb0448c905 \
-    --hash=sha256:5ba94a4eb68894ad6761a505eb225daf7e5cb7b4c32af62d4a45e9d42665bc31
+marshmallow==3.25.1 ; python_full_version >= "3.10.0" and python_full_version < "3.14.0" \
+    --hash=sha256:ec5d00d873ce473b7f2ffcb7104286a376c354cab0c2fa12f5573dab03e87210 \
+    --hash=sha256:f4debda3bb11153d81ac34b0d582bf23053055ee11e791b54b4b35493468040a
 packaging==24.2 ; python_full_version >= "3.10.0" and python_full_version < "3.14.0" \
     --hash=sha256:09abb1bccd265c01f4a3aa3f7a7db064b36514d2cba19a2f694fe6150451a759 \
     --hash=sha256:c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f
