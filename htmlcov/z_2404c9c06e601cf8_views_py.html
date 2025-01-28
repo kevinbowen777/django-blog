@@ -78,7 +78,7 @@
             <a id="nextFileLink" class="nav" href="index.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io/en/7.6.10">coverage.py v7.6.10</a>,
-            created at 2025-01-13 16:51 -0800
+            created at 2025-01-27 20:11 -0800
         </p>
         <aside class="hidden">
             <button type="button" class="button_next_chunk" data-shortcut="j"></button>
@@ -195,10 +195,10 @@
     <p class="pln"><span class="n"><a id="t100" href="#t100">100</a></span><span class="t">            <span class="com"># fmt: off</span>&nbsp;</span><span class="r"></span></p>
     <p class="mis show_mis"><span class="n"><a id="t101" href="#t101">101</a></span><span class="t">            <span class="nam">cd</span> <span class="op">=</span> <span class="nam">form</span><span class="op">.</span><span class="nam">cleaned_data</span>&nbsp;</span><span class="r"></span></p>
     <p class="mis show_mis"><span class="n"><a id="t102" href="#t102">102</a></span><span class="t">            <span class="nam">post_url</span> <span class="op">=</span> <span class="nam">request</span><span class="op">.</span><span class="nam">build_absolute_uri</span><span class="op">(</span><span class="nam">post</span><span class="op">.</span><span class="nam">get_absolute_url</span><span class="op">(</span><span class="op">)</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p class="mis show_mis"><span class="n"><a id="t103" href="#t103">103</a></span><span class="t">            <span class="nam">subject</span> <span class="op">=</span> <span class="str">f"{cd['name']} recommends you read "</span> <span class="str">f"{post.title}"</span>&nbsp;</span><span class="r"></span></p>
+    <p class="mis show_mis"><span class="n"><a id="t103" href="#t103">103</a></span><span class="t">            <span class="nam">subject</span> <span class="op">=</span> <span class="fst">f"</span><span class="op">{</span><span class="nam">cd</span><span class="op">[</span><span class="str">'name'</span><span class="op">]</span><span class="op">}</span><span class="fst"> recommends you read </span><span class="fst">"</span> <span class="fst">f"</span><span class="op">{</span><span class="nam">post</span><span class="op">.</span><span class="nam">title</span><span class="op">}</span><span class="fst">"</span>&nbsp;</span><span class="r"></span></p>
     <p class="mis show_mis"><span class="n"><a id="t104" href="#t104">104</a></span><span class="t">            <span class="nam">message</span> <span class="op">=</span> <span class="op">(</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t105" href="#t105">105</a></span><span class="t">                <span class="str">f"Read {post.title} at {post_url}\n\n"</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t106" href="#t106">106</a></span><span class="t">                <span class="str">f"{cd['name']}'s comments: {cd['comments']}"</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t105" href="#t105">105</a></span><span class="t">                <span class="fst">f"</span><span class="fst">Read </span><span class="op">{</span><span class="nam">post</span><span class="op">.</span><span class="nam">title</span><span class="op">}</span><span class="fst"> at </span><span class="op">{</span><span class="nam">post_url</span><span class="op">}</span><span class="fst">\n\n</span><span class="fst">"</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t106" href="#t106">106</a></span><span class="t">                <span class="fst">f"</span><span class="op">{</span><span class="nam">cd</span><span class="op">[</span><span class="str">'name'</span><span class="op">]</span><span class="op">}</span><span class="fst">'s comments: </span><span class="op">{</span><span class="nam">cd</span><span class="op">[</span><span class="str">'comments'</span><span class="op">]</span><span class="op">}</span><span class="fst">"</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t107" href="#t107">107</a></span><span class="t">            <span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="mis show_mis"><span class="n"><a id="t108" href="#t108">108</a></span><span class="t">            <span class="nam">send_mail</span><span class="op">(</span><span class="nam">subject</span><span class="op">,</span> <span class="nam">message</span><span class="op">,</span> <span class="str">"kevin.bowen@gmail.com"</span><span class="op">,</span> <span class="op">[</span><span class="nam">cd</span><span class="op">[</span><span class="str">"to"</span><span class="op">]</span><span class="op">]</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="mis show_mis"><span class="n"><a id="t109" href="#t109">109</a></span><span class="t">            <span class="nam">sent</span> <span class="op">=</span> <span class="key">True</span>&nbsp;</span><span class="r"></span></p>
@@ -259,7 +259,7 @@
             <a class="nav" href="index.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io/en/7.6.10">coverage.py v7.6.10</a>,
-            created at 2025-01-13 16:51 -0800
+            created at 2025-01-27 20:11 -0800
         </p>
     </div>
 </footer>
