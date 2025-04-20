@@ -1,7 +1,7 @@
 django-blog
 ===========
 
-The django-blog_ project is a web blog application built using the Django 5.1.x web application framework and is part of the collection of `Web Framework Projects`_ assembled by Kevin Bowen.
+The django-blog_ project is a web blog application built using the Django 5.2.x web application framework and is part of the collection of `Web Framework Projects`_ assembled by Kevin Bowen.
 
 .. _django-blog: https://github.com/kevinbowen777/django-blog
 .. _Web Framework Projects: https://github.com/kevinbowen777/web-project-index
