@@ -9,7 +9,7 @@
 
 </div>
 
-django-blog is a web blog application built with Django 5.1.x
+django-blog is a web blog application built with Django 5.2.x
 
 ##### Table of Contents
  - [Features](#features)
