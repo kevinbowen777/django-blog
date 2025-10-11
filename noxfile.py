@@ -89,8 +89,7 @@ def audit(session):
         "--desc",
         "--aliases",
         "--ignore-vuln",
-        "CVE-2025-8869",
-        # "PYSEC-2025-49",
+        "GHSA-4xh5-x5gv-qwph",
     )
 
 
