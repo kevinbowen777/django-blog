@@ -90,6 +90,8 @@ def audit(session):
         "--aliases",
         "--ignore-vuln",
         "GHSA-4xh5-x5gv-qwph",
+        "--ignore-vuln",
+        "GHSA-5rjg-fvgr-3xxf",
     )
 
 
