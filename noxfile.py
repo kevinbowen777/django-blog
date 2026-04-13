@@ -88,9 +88,6 @@ def audit(session):
         "pip-audit",
         "--desc",
         "--aliases",
-        # pygments - CVE-2026-4539
-        "--ignore-vuln",
-        "GHSA-5239-wwwm-4pmq",
         # Python 3.11 - setuptools - CVE-2025-47273
         "--ignore-vuln",
         "GHSA-5rjg-fvgr-3xxf",
