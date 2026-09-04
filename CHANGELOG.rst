@@ -27,6 +27,40 @@ with advance notice in the **Deprecations** section of releases.
 
 .. towncrier release notes start
 
+django-blog 0.3.6 (2026-09-04)
+==============================
+
+Contributor-facing changes
+--------------------------
+
+-  (`#668 <https://github.com/kevinbowen777/django-blog/668>`_): Initial zizmor remediation. Pin GitHub actions to hashes.
+
+-  (`#671 <https://github.com/kevinbowen777/django-blog/671>`_): Update django-debug-toolbar to 7.1.1
+
+-  (`#671 <https://github.com/kevinbowen777/django-blog/671>`_): Update django-allauth to 65.19.1
+
+-  (`#671 <https://github.com/kevinbowen777/django-blog/671>`_): Update testing to Python 3.14.7, 3.13.15, and 3.12.14
+
+-  (`#671 <https://github.com/kevinbowen777/django-blog/671>`_): Update nox to 2026.8.10
+
+-  (`#676 <https://github.com/kevinbowen777/django-blog/676>`_): Update towncrier to 26.9.0
+
+-  (`#676 <https://github.com/kevinbowen777/django-blog/676>`_): Update django-debug-toolbar to 8.0.0
+
+-  (`#676 <https://github.com/kevinbowen777/django-blog/676>`_): Update django-allauth to 65.19.2
+
+-  (`#676 <https://github.com/kevinbowen777/django-blog/676>`_): Update psycopg to 3.3.5
+
+-  (`#676 <https://github.com/kevinbowen777/django-blog/676>`_): Update djlint to 1.45.0
+
+-  (`#676 <https://github.com/kevinbowen777/django-blog/676>`_): Update nox to 2026.8.17
+
+
+New features
+------------
+
+-  (`#676 <https://github.com/kevinbowen777/django-blog/676>`_): Upgrade to Django 6.1.1
+
 django-blog 0.3.5 (2026-08-11)
 ==============================
 
