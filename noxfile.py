@@ -5,7 +5,7 @@ import tempfile
 import nox
 
 PYTHON_VERSIONS = ["3.12", "3.13", "3.14"]
-nox.options.sessions = "audit", "lint", "coverage", "tests"
+nox.options.sessions = ["audit", "lint", "coverage", "tests"]
 locations = (
     "accounts",
     "config",
@@ -121,8 +121,8 @@ def tests(session):
     )
     session.run(
         "python",
-        # "-Wonce::DeprecationWarning",
-        "-Walways::DeprecationWarning",
+        "-Wonce::DeprecationWarning",
+        # "-Walways::DeprecationWarning",
         "-Im",
         "pytest",
         *args,
