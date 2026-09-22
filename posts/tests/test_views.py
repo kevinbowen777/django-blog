@@ -128,6 +128,7 @@ class PostTests(TestCase):
             status="DF",
         )
         self.slug_time = dt.now().strftime("%Y/%-m/%-d")
+        # self.slug_time = timezone.now()
 
     """
     def test___str__(self):
