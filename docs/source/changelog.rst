@@ -27,6 +27,30 @@ with advance notice in the **Deprecations** section of releases.
 
 .. towncrier release notes start
 
+django-blog 0.3.8 (2026-10-09)
+==============================
+
+Security updated
+----------------
+
+-  (`#686 <https://github.com/kevinbowen777/django-blog/686>`_): Update django-allauth to 65.19.7
+
+-  (`#687 <https://github.com/kevinbowen777/django-blog/687>`_): Update Django to 6.1.2
+
+
+Contributor-facing changes
+--------------------------
+
+-  (`#682 <https://github.com/kevinbowen777/django-blog/682>`_): Fix Factory DeprecationWarning
+
+-  (`#683 <https://github.com/kevinbowen777/django-blog/683>`_): Fix CentralCovContextWarning
+
+-  (`#686 <https://github.com/kevinbowen777/django-blog/686>`_): Update testing for Python 3.14.8, 3.13.16, 3.12.15
+
+-  (`#686 <https://github.com/kevinbowen777/django-blog/686>`_): Update djlint to 1.46.4
+
+-  (`#686 <https://github.com/kevinbowen777/django-blog/686>`_): Update werkzeug to 3.1.9
+
 django-blog 0.3.7 (2026-09-22)
 ==============================
 
