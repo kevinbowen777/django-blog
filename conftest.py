@@ -43,10 +43,10 @@ def ten_posts(user):
     for post_id in range(10):
         post_id += 1
         Post.objects.create(
-            title="A Tiny Test Blog Post {0}".format(post_id),
+            title=f"A Tiny Test Blog Post {post_id}",
             tags="dummy, test, django, blog",
             # slug="2023/9/18/a-tiny-test-blog-post-{0}/".format(post_id),
-            body="Some blog post content {0}".format(post_id),
+            body=f"Some blog post content {post_id}",
             author=user,
         )
         posts.append(post)

@@ -1,3 +1,5 @@
+from typing import ClassVar
+
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector
 from django.core.mail import send_mail
@@ -63,7 +65,7 @@ def post_detail(request, year, month, day, post):
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     template_name = "posts/post_new.html"
-    fields = ["title", "tags", "status", "body"]
+    fields: ClassVar[list[str]] = ["title", "tags", "status", "body"]
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -73,7 +75,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
     template_name = "posts/post_edit.html"
-    fields = ["title", "tags", "status", "body"]
+    fields: ClassVar[list[str]] = ["title", "tags", "status", "body"]
 
     def test_func(self):
         obj = self.get_object()
@@ -129,7 +131,8 @@ def post_search(request):
             )
             search_query = SearchQuery(query)
             results = (
-                Post.published.annotate(
+                Post.published
+                .annotate(
                     search=search_vector, rank=SearchRank(search_vector, search_query)
                 )
                 .filter(rank__gte=0.3)

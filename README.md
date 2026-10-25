@@ -18,6 +18,7 @@ django-blog is a web blog application built with Django 6.x
 - [Testing](#testing)
 - [Application Demo](#application-demo)
 - [Screenshots](#screenshots)
+- [Contributions](#contributions)
 - [Reporting Bugs](#reporting-bugs)
 
 ---
@@ -130,6 +131,13 @@ able to run `run` instead of `./run`.*
 ### Profile Page
 
 ![Profile Page](images/django-blog_profilepage.png)
+
+---
+
+### Contributions
+
+You are free to fork this repository and modify as you see fit. See
+[CONTRIBUTING](https://github.com/kevinbowen777/django-blog/CONTRIBUTING.md) for details on reporting issues, etc.
 
 ---
 

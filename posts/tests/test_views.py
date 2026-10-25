@@ -211,9 +211,9 @@ class PostListViewTest(TestCase):
         number_of_posts = 10
         for post_id in range(number_of_posts):
             Post.objects.create(
-                title="A Tiny Test Post {0}".format(post_id),
-                slug="2023/7/15/a-tiny-test-post-{0}/".format(post_id),
-                body="Some post content {0}".format(post_id),
+                title=f"A Tiny Test Post {post_id}",
+                slug=f"2023/7/15/a-tiny-test-post-{post_id}/",
+                body=f"Some post content {post_id}",
                 author=self.user,
             )
 
@@ -242,7 +242,7 @@ def test_comment_add(client, post, user):
         },
     )
 
-    assert response.status_code, 200
+    assert response.status_code == 200
 
 
 class CommentTests(TestCase):
