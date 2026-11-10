@@ -4,7 +4,7 @@
 project = "django-blog"
 author = "Kevin Bowen"
 copyright = f"%Y, {author}"
-release = "0.3.8"
+release = "0.3.10"
 
 # -- General configuration --------------------------------------------
 extensions = [
